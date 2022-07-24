@@ -1,0 +1,6683 @@
+research:
+  - delete: STR_LASER_WEAPONS
+  - delete: STR_MOTION_SCANNER
+  - delete: STR_MEDI_KIT
+  - delete: STR_LASER_RIFLE
+  - delete: STR_LASER_PISTOL
+  - delete: STR_HEAVY_LASER
+  - delete: STR_LASER_CANNON
+  - delete: STR_PERSONAL_ARMOR
+  - delete: STR_POWER_SUIT
+  - delete: STR_FLYING_SUIT
+  - delete: STR_PSI_AMP
+  - delete: STR_PSI_LAB
+  - delete: STR_LASER_DEFENSE
+  - delete: STR_FLOATER_LEADER
+  - delete: STR_FLOATER_COMMANDER
+  - delete: STR_SNAKEMAN_LEADER
+  - delete: STR_SNAKEMAN_COMMANDER
+  - delete: STR_ETHEREAL_SOLDIER
+  - delete: STR_ETHEREAL_LEADER
+  - delete: STR_ETHEREAL_COMMANDER
+  - delete: STR_SECTOID_LEADER
+  - delete: STR_SECTOID_COMMANDER
+  - delete: STR_LEADER_PLUS
+  - delete: STR_COMMANDER_PLUS
+  - delete: STR_THE_MARTIAN_SOLUTION
+  - delete: STR_CYDONIA_OR_BUST
+  - delete: STR_NEW_FIGHTER_CRAFT
+  - delete: STR_NEW_FIGHTER_TRANSPORTER
+  - delete: STR_ULTIMATE_CRAFT
+  - delete: STR_GRAV_SHIELD
+  - delete: STR_ZOMBIE_CORPSE
+  - delete: STR_BLASTER_LAUNCHER
+  - delete: STR_BLASTER_BOMB
+  - delete: STR_FUSION_MISSILE
+  - delete: STR_FUSION_DEFENSE
+  - delete: STR_PLASMA_CANNON_DEP_1
+  - delete: STR_PLASMA_CANNON_DEP_2
+
+  - name: STR_TROLLIUM
+    cost: 0
+    points: 0
+    needItem: true
+#-------------------------------------------mission result----------------------
+                               
+  - name: STR_FIRST_CONTACT_ALIENS_PRE
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM 
+  - name: STR_FIRST_CONTACT_GOBLINS_PRE
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_FIRST_CONTACT_INVADERS_PRE #encounter invaders
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_WHAT_TO_SEEK1 #boat will spawn
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM      
+  - name: STR_WHAT_TO_SEEK2 #radar needed
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM   
+  - name: STR_WHAT_TO_SEEK3 #rifts will spawn
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM   
+      
+  - name: STR_SPIRITS_PRE #encounter spirits
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+
+  - name: STR_SPIRITS_CONTACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 100
+    points: 20
+    dependencies:
+      - STR_SPIRITS_PRE
+
+  - name: STR_RIFT_OVERVIEW_PRE #Rift mission won
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM   
+      
+  - name: STR_NEST_OVERVIEW_PRE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_TROLLIUM
+      
+  - name: STR_NEST_OVERVIEW
+    requiresBaseFunc: [HQFUNC]
+    cost: 600
+    points: 300
+    dependencies:
+      - STR_NEST_OVERVIEW_PRE
+      
+  - name: STR_MASTER_2_PRE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_TROLLIUM
+#-------------------------------------------Useless researches---------------------------
+  - name: STR_INVADER_REPORT_1
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_LEGEND_HOBGOBLINS
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_ORC_CODEX
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_LEGEND_DRAGONS
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_INVADER_REPORT_ORDERS
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_INVADER_REPORT_PALADIN
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_QUEEN_REPORT_1
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_QUEEN_REPORT_2
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_QUEEN_REPORT_3
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_QUEEN_REPORT_4
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_QUEEN_REPORT_5
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_QUEEN_REPORT_6
+    cost: 0
+    points: 200
+    dependencies: 
+      - STR_TROLLIUM
+#-------------------------------------------Initial researches---------------------------
+
+  - name: STR_USA_SUPPORT
+    requiresBaseFunc: [HQFUNC]
+    cost: 5
+    points: 0
+    unlocks: 
+      - STR_USA_POLICE_CONTRACT
+    disables:
+      - STR_RUSSIA_SUPPORT
+      - STR_CHINA_SUPPORT
+  - name: STR_RUSSIA_SUPPORT
+    requiresBaseFunc: [HQFUNC]
+    cost: 5
+    points: 0
+    unlocks: 
+      - STR_RUSSIA_POLICE_CONTRACT
+    disables:
+      - STR_USA_SUPPORT
+      - STR_CHINA_SUPPORT
+  - name: STR_CHINA_SUPPORT
+    requiresBaseFunc: [HQFUNC]
+    cost: 5
+    points: 0
+    unlocks: 
+      - STR_CHINA_POLICE_CONTRACT
+    disables:
+      - STR_USA_SUPPORT
+      - STR_RUSSIA_SUPPORT
+
+  - name: STR_USA_POLICE_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_USA_SUPPORT
+    unlocks: 
+      - STR_USA_CHINA_POLICE_CONTRACT
+      - STR_ARMY_CONTRACT_PRE        
+      - STR_UMP_U     
+      - STR_REMINGTON1100_U  
+    disables:
+      - STR_RUSSIA_POLICE_CONTRACT
+      - STR_CHINA_POLICE_CONTRACT     
+      - STR_UMP     
+      - STR_REMINGTON1100   
+      - STR_M16B     
+      - STR_M249
+  - name: STR_RUSSIA_POLICE_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 10 #DUE TO BUREAUCRACY
+    points: 0
+    dependencies:
+      - STR_RUSSIA_SUPPORT
+    unlocks: 
+      - STR_ARMY_CONTRACT_PRE 
+      - STR_GSH_18_U  
+      - STR_AKSU_U  
+      - STR_CEDAR_U
+    disables:
+      - STR_USA_POLICE_CONTRACT
+      - STR_CHINA_POLICE_CONTRACT
+      - STR_GSH_18  
+      - STR_AKSU  
+      - STR_CEDAR  
+      - STR_AK15   
+      - STR_PKM
+  - name: STR_CHINA_POLICE_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_CHINA_SUPPORT
+    unlocks: 
+      - STR_ARMY_CONTRACT_PRE 
+      - STR_QCW05_U
+    disables:
+      - STR_RUSSIA_POLICE_CONTRACT
+      - STR_USA_POLICE_CONTRACT 
+      - STR_QCW05    
+      - STR_QBZ97 
+      - STR_QBB95
+      
+#-------------------------------------------ServoResearches--------------------------------
+
+  - name: STR_ARMY_CONTRACT_PRE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_CHINA_POLICE_CONTRACT
+      - STR_RUSSIA_POLICE_CONTRACT
+      - STR_USA_POLICE_CONTRACT
+  - name: STR_USA_CHINA_POLICE_CONTRACT
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_CHINA_ARMY_CONTRACT
+      - STR_USA_POLICE_CONTRACT
+  - name: STR_HEAVY_WEAPONS_PRE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_USA_ARMY_CONTRACT
+      - STR_CHINA_ARMY_CONTRACT
+      - STR_RUSSIA_ARMY_CONTRACT
+  - name: STR_CHINA_RUSSIA_ARMY_CONTRACT
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_CHINA_ARMY_CONTRACT
+      - STR_RUSSIA_ARMY_CONTRACT
+  - name: STR_X_CONTRACT_PRE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_HIGH_CALIBER
+#-------------------------------------------Army contracts---------------------------------
+  - name: STR_USA_ARMY_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 220
+    points: 0
+    dependencies:
+      - STR_ARMY_CONTRACT_PRE
+      - STR_USA_POLICE_CONTRACT
+      - STR_FIRST_CONTACT_GOBLINS
+    disables:
+      - STR_RUSSIA_ARMY_CONTRACT
+      - STR_CHINA_ARMY_CONTRACT
+    unlocks: 
+      - STR_HEAVY_WEAPONS_PRE  
+      - STR_M16B_U
+      - STR_M249_U
+  - name: STR_RUSSIA_ARMY_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 230
+    points: 0
+    dependencies:
+      - STR_ARMY_CONTRACT_PRE
+      - STR_RUSSIA_POLICE_CONTRACT
+      - STR_FIRST_CONTACT_GOBLINS
+    disables:
+      - STR_USA_ARMY_CONTRACT
+      - STR_CHINA_ARMY_CONTRACT
+    unlocks: 
+      - STR_HEAVY_WEAPONS_PRE
+      - STR_CHINA_RUSSIA_ARMY_CONTRACT 
+      - STR_AK15_U
+      - STR_PKM_U
+  - name: STR_CHINA_ARMY_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 220
+    points: 0
+    dependencies:
+      - STR_ARMY_CONTRACT_PRE
+      - STR_CHINA_POLICE_CONTRACT
+      - STR_FIRST_CONTACT_GOBLINS
+    disables:
+      - STR_RUSSIA_ARMY_CONTRACT
+      - STR_USA_ARMY_CONTRACT
+    unlocks: 
+      - STR_HEAVY_WEAPONS_PRE
+      - STR_CHINA_RUSSIA_ARMY_CONTRACT
+      - STR_USA_CHINA_POLICE_CONTRACT    
+      - STR_QBZ97_U
+      - STR_QBB95_U
+          
+  - name: STR_CHINA_SPECOPS_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 150
+    points: 0
+    lookup: STR_SPECOPS_CONTRACT
+    dependencies:
+      - STR_CHINA_ARMY_CONTRACT
+      - STR_FIRST_CONTACT_INVADERS
+    unlocks: 
+      - STR_HIGH_CALIBER_PRE
+  - name: STR_RUSSIA_SPECOPS_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 150
+    points: 0
+    lookup: STR_SPECOPS_CONTRACT
+    dependencies:
+      - STR_RUSSIA_ARMY_CONTRACT
+      - STR_FIRST_CONTACT_INVADERS
+    unlocks: 
+      - STR_HIGH_CALIBER_PRE
+  - name: STR_USA_SPECOPS_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 150
+    points: 0
+    lookup: STR_SPECOPS_CONTRACT
+    dependencies:
+      - STR_USA_ARMY_CONTRACT
+      - STR_FIRST_CONTACT_INVADERS
+    unlocks: 
+      - STR_HIGH_CALIBER_PRE
+      
+  - name: STR_SPECOPS_CONTRACT
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_HIGH_CALIBER_PRE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_CHINA_SPECOPS_CONTRACT
+      - STR_RUSSIA_SPECOPS_CONTRACT
+      - STR_USA_SPECOPS_CONTRACT
+      
+#-------------------------------------------Weapons from civilians---------------------------
+  - name: STR_BASEBALL_BAT
+    cost: 0
+    points: 0 
+    needItem: true
+  - name: STR_MAGIC_BAT
+    requiresBaseFunc: [PSILAB]
+    cost: 50
+    points: 10 
+    needItem: true
+    destroyItem: true
+  - name: STR_DESERT_EAGLE
+    cost: 0
+    points: 0 
+    needItem: true   
+  - name: STR_HUNTING_RIFLE
+    cost: 0
+    points: 0 
+    needItem: true
+  - name: STR_GSH_18
+    cost: 10
+    points: 0      
+    unlocks: 
+      - STR_GSH_18_U
+    needItem: true 
+  - name: STR_GSH_18_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_AKSU
+    cost: 10
+    points: 0     
+    unlocks: 
+      - STR_AKSU_U
+    needItem: true
+  - name: STR_AKSU_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_CEDAR
+    cost: 10
+    points: 0   
+    unlocks: 
+      - STR_CEDAR_U
+    needItem: true
+  - name: STR_CEDAR_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_UMP
+    cost: 10
+    points: 0    
+    unlocks: 
+      - STR_UMP_U
+    needItem: true
+  - name: STR_UMP_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_QCW05
+    cost: 10
+    points: 0     
+    unlocks: 
+      - STR_QCW05_U
+    needItem: true 
+  - name: STR_QCW05_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_REMINGTON1100
+    cost: 10
+    points: 0    
+    unlocks: 
+      - STR_REMINGTON1100_U
+    needItem: true   
+  - name: STR_REMINGTON1100_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_AK15
+    cost: 10
+    points: 0    
+    unlocks: 
+      - STR_AK15_U
+    needItem: true 
+  - name: STR_AK15_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_M16B
+    cost: 10
+    points: 0   
+    unlocks: 
+      - STR_M16B_U
+    needItem: true
+  - name: STR_M16B_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_QBZ97
+    cost: 10
+    points: 0    
+    unlocks: 
+      - STR_QBZ97_U
+    needItem: true
+  - name: STR_QBZ97_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_PKM
+    cost: 10
+    points: 0   
+    unlocks: 
+      - STR_PKM_U
+    needItem: true
+  - name: STR_PKM_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_M249
+    cost: 10
+    points: 0    
+    unlocks: 
+      - STR_M249_U
+    needItem: true 
+  - name: STR_M249_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+  - name: STR_QBB95
+    cost: 10
+    points: 0     
+    unlocks: 
+      - STR_QBB95_U
+    needItem: true
+  - name: STR_QBB95_U
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+#-------------------------------------------MORE DAKKA------------------------------------
+  - name: STR_HEAVY_WEAPONS
+    cost: 120
+    points: 0
+    dependencies:
+      - STR_HEAVY_WEAPONS_PRE
+      - STR_FIRST_CONTACT_INVADERS
+  - name: STR_HIGH_CALIBER
+    cost: 120
+    points: 0
+    dependencies:
+      - STR_HIGH_CALIBER_PRE
+      - STR_HEAVY_WEAPONS_PRE
+    unlocks: 
+      - STR_X_CONTRACT_PRE
+
+#-------------------------------------------EVEN MORE DAKKA--------------------------
+  - name: STR_X_CONTRACT
+    requiresBaseFunc: [HQFUNC]
+    cost: 200
+    points: 0
+    dependencies:
+      - STR_X_CONTRACT_PRE
+      - STR_INTERNATIONALIZATION
+  - name: STR_X_CONTRACT_MELEE
+    cost: 100
+    points: 5
+    dependencies:
+      - STR_X_CONTRACT
+  - name: STR_X_CONTRACT_LIGHT
+    cost: 320
+    points: 10
+    dependencies:
+      - STR_X_CONTRACT
+
+  - name: STR_X_MEDICINE
+    cost: 300
+    points: 20
+    dependencies:
+      - STR_X_CONTRACT
+      
+  - name: STR_X_CONTRACT_MINIGUN
+    cost: 200
+    points: 10
+    dependencies:
+      - STR_X_CONTRACT_LIGHT
+
+  - name: STR_X_CONTRACT_HEAVY
+    cost: 200
+    points: 10
+    dependencies:
+      - STR_X_CONTRACT_LIGHT
+      - STR_HEAVY_WEAPONS
+  - name: STR_ROCKET_LAUNCHER
+    cost: 100
+    points: 10
+    dependencies:
+      - STR_X_CONTRACT_HEAVY
+    
+  - name: STR_X_HWP
+    cost: 400
+    points: 10
+    dependencies:
+      - STR_X_CONTRACT_HEAVY
+      
+  - name: STR_X_HWP_CANNON
+    cost: 100
+    points: 10
+    dependencies:
+      - STR_X_HWP
+  - name: STR_X_HWP_MINIGUN
+    cost: 100
+    points: 10
+    dependencies:
+      - STR_X_HWP
+      - STR_X_CONTRACT_MINIGUN
+  - name: STR_X_HWP_ROCKETS
+    cost: 100
+    points: 10
+    dependencies:
+      - STR_X_HWP
+      - STR_ROCKET_LAUNCHER
+      
+#-------------------------------------------Other X-stuff------------------------------
+
+  - name: STR_ANTITOXIN
+    cost: 250
+    points: 50
+    dependencies:
+      - STR_DIRE_RAT_TERRORIST
+      - STR_GLASS_SPIDER_TERRORIST
+      - STR_GIANT_SCORPION_TERRORIST
+
+  - name: STR_CHEMICAL_DANGER
+    cost: 150
+    points: 50
+    dependencies:
+      - STR_SLIME_TERRORIST
+      - STR_FLOATER_TERRORIST
+      - STR_MEDUSA_TERRORIST
+      - STR_ARROWS_TOXIC
+  - name: STR_ENEMY_DETECTION_PRE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_KAA_TERRORIST
+      - STR_DIRE_RAT_TERRORIST
+      - STR_PLAGUE_RAT_TERRORIST
+      - STR_SNIPER_BEETLE_TERRORIST
+      - STR_BOMBER_BEETLE_TERRORIST
+      - STR_GLASS_SPIDER_TERRORIST
+      - STR_PRISM_SPIDER_TERRORIST
+#      - STR_GHOSTHOUND_TERRORIST
+  - name: STR_ENEMY_DETECTION
+    cost: 150
+    points: 50
+    dependencies:
+      - STR_X_CONTRACT
+      - STR_ENEMY_DETECTION_PRE
+      
+  - name: STR_INVISIBILITY_PRE
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_INVISIBILITY
+    cost: 350
+    points: 50
+    dependencies:
+      - STR_INVISIBILITY_PRE
+      
+      
+  - name: STR_BLOCK_BOW_PRE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_ARROWS 
+      - STR_ARROWS_FIRE 
+      - STR_ARROWS_TOXIC
+  - name: STR_BLOCK_BOW
+    cost: 100
+    points: 50 
+    dependencies:
+      - STR_BLOCK_BOW_PRE 
+      - STR_HIGH_CALIBER_PRE
+      
+  - name: STR_ADV_PROTO
+    cost: 400
+    points: 150
+    requiresBaseFunc: [SCRIPTOR]
+    needItem: true
+    destroyItem: true
+  - name: STR_ADV_PROTO_CLIP
+    cost: 400
+    points: 150
+    requiresBaseFunc: [SCRIPTOR]
+    needItem: true
+    destroyItem: true
+  - name: STR_ADV_GUNS
+    cost: 400
+    points: 150
+    requiresBaseFunc: [SCRIPTOR]
+    dependencies:
+      - STR_ADV_PROTO
+      - STR_ADV_PROTO_CLIP
+
+  - name: STR_CHITIN_VEST
+    cost: 210
+    points: 30
+    dependencies:
+      - STR_CHITIN_PLATE
+      
+  - name: STR_PROTECT_SUIT
+    cost: 300
+    points: 0
+    dependencies:
+      - STR_X_CONTRACT
+      - STR_ALIEN_BIOLOGY_1
+      
+  - name: STR_WOODEN_VEST
+    cost: 250
+    points: 30
+    dependencies:
+      - STR_ALIEN_ALLOYS
+      
+  - name: STR_SCAVENGER_ARMOR
+    cost: 250
+    points: 30
+    dependencies:
+      - STR_DAMAGED_ARMOR
+      - STR_WATER_SHIELD
+      - STR_MANA_CRYSTAL
+      
+  - name: STR_PROTECT_WIND
+    cost: 230
+    points: 20
+    dependencies:
+      - STR_PROTECT_SUIT
+      - STR_AIR_SHIELD
+      
+  - name: STR_PSION_ARMOR
+    cost: 350
+    points: 30
+    dependencies:
+      - STR_AURA_SHIELD
+      - STR_PROTECT_SUIT
+      
+  - name: STR_SCOUT_ARMOR
+    cost: 450
+    points: 50
+    dependencies:
+      - STR_RUNES_3
+      - STR_INVISIBILITY
+      
+  - name: STR_CYBER_SUIT
+    cost: 400
+    points: 50
+    dependencies:
+      - STR_PSION_ARMOR
+      - STR_MAGIC_THEORY
+
+  - name: STR_HEAVY_ARMOR
+    cost: 600
+    points: 100
+    dependencies:
+      - STR_PSION_ARMOR
+      - STR_SCAVENGER_ARMOR
+      - STR_RUNES_3
+
+  - name: STR_CRUSADER_ARMOR
+    cost: 300
+    points: 50
+    dependencies:
+      - STR_HEAVY_ARMOR
+
+  - name: STR_PSI_KNIGHT
+    cost: 400
+    points: 50
+    dependencies:
+      - STR_HEAVY_ARMOR
+      - STR_MENTAT_MASTER_TRANSFORMATION
+      - STR_AMULET_STONEWALL
+  - name: STR_WARRIOR_ARMOR
+    cost: 400
+    points: 50
+    dependencies:
+      - STR_HEAVY_ARMOR
+      - STR_SIGILS
+      - STR_BATTLEMAGE_MASTER_TRANSFORMATION
+  - name: STR_CHOSEN_ARMOR
+    cost: 500
+    points: 50
+    dependencies:
+      - STR_CHOSEN_TRANSFORMATION
+      - STR_WARRIOR_ARMOR
+      - STR_PSI_KNIGHT
+#-------------------------------------------Crafts
+
+  - name: STR_ARMORED_INTERCEPTOR
+    cost: 250
+    points: 35
+    dependencies:
+      - STR_AERIAL_CONTRACT_2
+      - STR_ALIEN_ALLOYS
+      
+  - name: STR_IMPROVED_RANGER
+    cost: 250
+    points: 30
+    dependencies:
+      - STR_ALIEN_ALLOYS
+      - STR_X_CONTRACT
+  - name: STR_HYBRID_INTERCEPTOR
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 35
+    dependencies:
+      - STR_ARMORED_INTERCEPTOR
+      - STR_UFO_CONSTRUCTION
+      - STR_RUNEWORDS
+  - name: STR_HYBRID_TRANSPORT
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 400
+    points: 45
+    dependencies:
+      - STR_HYBRID_INTERCEPTOR
+      
+  - name: STR_HYBRID_FIGHTER
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 35
+    dependencies:
+      - STR_HYBRID_INTERCEPTOR
+      - STR_RUNES_3
+  - name: STR_ULTIMATE_CRAFT
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 450
+    points: 50
+    dependencies:
+      - STR_HYBRID_FIGHTER
+      - STR_HYBRID_TRANSPORT
+      
+#-------------------------------------------Craft equipment
+  - name: STR_CRAFT_SPEED_1
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 30
+    dependencies:
+      - STR_BOAT_GLYPH
+      - STR_MANA_CRYSTAL
+  - name: STR_CRAFT_SHIELD_1
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 30
+    dependencies:
+      - STR_CRAFT_SPEED_1
+      - STR_AIR_SHIELD
+      - STR_AMULET_WINDWALL
+  - name: STR_CRAFT_SENSOR_1
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 30
+    dependencies:
+      - STR_CRAFT_SPEED_1
+      - STR_MENTAT_TRANSFORMATION
+      - STR_MIND_PROBE
+  - name: STR_CRAFT_SENSOR_2
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 30
+    dependencies:
+      - STR_CRAFT_SENSOR_1
+      - STR_MENTAT_MASTER_TRANSFORMATION
+  - name: STR_CRAFT_POWER_1
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 30
+    dependencies:
+      - STR_CRAFT_SPEED_1
+      - STR_BATTLEMAGE_MASTER_TRANSFORMATION
+  - name: STR_RUNE_CANNON
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 320
+    points: 30
+    dependencies:
+      - STR_AERIAL_CONTRACT_2
+      - STR_RUNEWORDS
+  - name: STR_SHOCK_CANNON_UC
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 380
+    points: 30
+    dependencies:
+      - STR_GUN_AMULET
+      - STR_WANDS_BUILD_1
+      - STR_STAVES_BUILD_1
+      - STR_RUNEWORDS
+  - name: STR_SKYSTORM
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 30
+    dependencies:
+      - STR_RUNES_2
+      - STR_MANA_CRYSTAL
+      - STR_BOAT_GLYPH
+      - STR_AERIAL_CONTRACT_2
+  - name: STR_RUNE_DEFENSES
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 220
+    points: 30
+    dependencies:
+      - STR_SKYSTORM
+
+  - name: STR_FIRE_CANNON_UC
+    requiresBaseFunc: [SCRIPTOR,POLYGON]
+    cost: 320
+    points: 30
+    dependencies:
+      - STR_SHOCK_CANNON_UC
+      - STR_FIRE_MAGIC
+      - STR_FIRE_BEAM_2
+  - name: STR_FIRE_DEFENSES
+    requiresBaseFunc: [SCRIPTOR,POLYGON]
+    cost: 220
+    points: 30
+    dependencies:
+      - STR_FIRE_CANNON_UC
+      - STR_RUNE_DEFENSES
+
+  - name: STR_WARP_CANNON_UC
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 320
+    points: 30
+    dependencies:
+      - STR_FIRE_CANNON_UC
+      - STR_WARP_BOLT_2
+#---------------------------------Interrogations--------------------------
+  - name: STR_INVADER_LANGUAGE_1
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM  
+#-------------------------------------------Primitives------------------------
+  - name: STR_GOBLIN_CORPSE
+    cost: 120
+    points: 50
+    lookup: STR_GOBLIN_AUTOPSY
+    needItem: true
+    destroyItem: true     
+  - name: STR_GOBLIN_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_GOBLIN_SOLDIER
+    cost: 160
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_GOBLIN0_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_HOBGOBLINS
+  - name: STR_GOBLIN_LOOTER
+    cost: 170
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_GOBLIN1_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_HOBGOBLINS
+        - STR_KAA_AUTOPSY
+        - STR_FLOATER_AUTOPSY
+        - STR_DIRE_RAT_AUTOPSY
+        - STR_SHADOW_BAT_AUTOPSY
+        - STR_FIREFLY_AUTOPSY
+        - STR_GIANT_AUTOPSY
+        - STR_GIANT_SCORPION_AUTOPSY
+        - STR_MEGAWORM_AUTOPSY
+        - STR_SLIME_AUTOPSY
+        - STR_SNIPER_BEETLE_AUTOPSY
+        - STR_SPIKEBOAR_AUTOPSY
+        - STR_WEREWOLF_AUTOPSY
+        - STR_GLASS_SPIDER_AUTOPSY
+
+  - name: STR_GOBLIN_SHAMAN
+    cost: 180
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_GOBLIN2_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_PRIMITIVE_MAGIC
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_HOBGOBLINS
+        - STR_SPIRIT_RED
+        - STR_SPIRIT_BLACK
+        - STR_SPIRIT_YELLOW
+        - STR_UNICORN
+  - name: STR_GOBLIN_LEADER
+    cost: 190
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_GOBLIN3_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!   
+        - STR_LEGEND_HOBGOBLINS
+        - STR_LEGEND_DRAGONS           
+  - name: STR_GOBLIN0_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true         
+  - name: STR_GOBLIN1_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true         
+  - name: STR_GOBLIN2_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+  - name: STR_GOBLIN3_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_GOBLINS
+    cost: 50
+    points: 20
+    needItem: false
+    dependencies:
+      - STR_GOBLIN_SOLDIER
+      - STR_GOBLIN_LOOTER
+      - STR_GOBLIN_SHAMAN
+      - STR_GOBLIN_LEADER
+      - STR_INVADER_LANGUAGE_2
+    
+  - name: STR_ORC_CORPSE
+    cost: 150
+    points: 50
+    lookup: STR_ORC_AUTOPSY
+    needItem: true
+    destroyItem: true     
+  - name: STR_ORC_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_ORC_SOLDIER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_ORC0_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_DRAGONS
+        - STR_ORC_CODEX
+  - name: STR_ORC0_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true 
+    
+  - name: STR_ORC_WARRIOR
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_ORC1_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_DRAGONS
+        - STR_ORC_CODEX       
+  - name: STR_ORC1_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true 
+    
+  - name: STR_ORCS
+    cost: 50
+    points: 20
+    needItem: false
+    dependencies:
+      - STR_ORC_SOLDIER
+      - STR_ORC_WARRIOR
+      - STR_INVADER_LANGUAGE_2
+      
+  - name: STR_INSECTOID_G_CORPSE
+    cost: 150
+    points: 50
+    lookup: STR_INSECTOID_AUTOPSY
+    needItem: true
+    destroyItem: true     
+  - name: STR_INSECTOID_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+        
+  - name: STR_INSECTOID_SOLDIER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_INSECTOID0_OVERVIEW       
+  - name: STR_INSECTOID0_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_ROACH_SOLDIER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_ROACH_OVERVIEW       
+  - name: STR_ROACH_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_MINOTAUR_CORPSE
+    cost: 150
+    points: 50
+    lookup: STR_MINOTAUR_AUTOPSY
+    needItem: true
+    destroyItem: true     
+  - name: STR_MINOTAUR_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_MINOTAUR_SOLDIER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_MINOTAUR_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!         
+  - name: STR_MINOTAUR_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true 
+#-------------------------------------------Lore      
+  - name: STR_ALLODS
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TROLLIUM
+#-------------------------------------------Invaders--------------------    
+  - name: STR_INVADER_CORPSE
+    cost: 150
+    points: 50
+    lookup: STR_INVADER_AUTOPSY
+    needItem: true
+    destroyItem: true
+ 
+  - name: STR_INVADER_MAGE_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_INVADER_AUTOPSY
+    needItem: true
+    destroyItem: true
+
+  - name: STR_INVADER_LEADER_CORPSE
+    cost: 150
+    points: 50
+    lookup: STR_INVADER_AUTOPSY
+    needItem: true
+    destroyItem: true
+
+  - name: STR_INVADER_PRIEST_CORPSE
+    cost: 250
+    points: 50
+    lookup: STR_INVADER_AUTOPSY
+    needItem: true
+    destroyItem: true
+
+  - name: STR_LEGION_CORPSE
+    cost: 150
+    points: 50
+    lookup: STR_INVADER_AUTOPSY
+    needItem: true
+    destroyItem: true
+
+  - name: STR_INVADER_LORD_CORPSE
+    cost: 250
+    points: 50
+    lookup: STR_INVADER_AUTOPSY
+    needItem: true
+    destroyItem: true
+
+  - name: STR_HEAVY_FOOTMAN_CORPSE
+    cost: 180
+    points: 50
+    lookup: STR_INVADER_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    
+  - name: STR_INVADER_KNIGHT_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_INVADER_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    
+  - name: STR_INVADER_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_MARAUDER_SOLDIER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_MARAUDER_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_DRAGONS
+        - STR_RUSTY_BLADE
+        - STR_KNIFE
+        - STR_SPEAR_1
+        - STR_SHORT_SWORD_1
+        - STR_SHORT_SWORD_POISON
+        - STR_SWORD_1
+        - STR_AXE_1
+  - name: STR_MARAUDER_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+  - name: STR_MARAUDER_GIRL
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_MARAUDER_GIRL_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_LEGEND_DRAGONS
+        - STR_BOW
+        - STR_LONGBOW
+        - STR_ARROWS
+        - STR_SPEAR_1
+        - STR_JAVELINS
+        - STR_THROWING_AXES
+  - name: STR_MARAUDER_GIRL_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_BOSS
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_BOSS_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_PSIONIC_1
+        - STR_INVADER_REPORT_ORDERS
+      STR_SKY_UNDER_CONTROL:
+        - STR_SMALL_BOAT
+        - STR_SMALL_BARGE
+        - STR_MEDIUM_BARGE
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+  - name: STR_BOSS_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_OUTCAST
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_OUTCAST_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_PSIONIC_1  
+        - STR_WATER_SHIELD
+        - STR_AIR_SHIELD
+        - STR_FIRE_BLADE_1
+        - STR_FROST_BLADE_1
+        - STR_FROST_BLADE_2
+        - STR_INVADER_REPORT_ORDERS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+  - name: STR_OUTCAST_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_LEGION
+    requiresBaseFunc: [HQFUNC]
+    cost: 150
+    points: 200
+    dependencies:
+      - STR_LEGION_FOOTMAN
+      - STR_LEGION_MANIPUL
+      
+  - name: STR_LEGION_FOOTMAN
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_LEGION_FOOTMAN_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_DRAGONS
+        - STR_RUSTY_BLADE
+        - STR_KNIFE
+        - STR_SPEAR_1
+        - STR_SHORT_SWORD_1
+        - STR_SHORT_SWORD_POISON
+        - STR_SHORT_SWORD_FROST
+        - STR_SWORD_1
+        - STR_AXE_1
+        - STR_INVADER_REPORT_ORDERS
+      STR_SKY_UNDER_CONTROL:
+        - STR_INVADERS_CRUISE
+        - STR_INVADERS_RAID
+        - STR_INVADERS_TERROR
+        - STR_INVADERS_CAMP
+        - STR_INVADERS_FORT
+        - STR_INVADERS_RETALIATION
+  - name: STR_LEGION_FOOTMAN_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_LEGION_MANIPUL
+    cost: 220
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_LEGION_MANIPUL_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_FIRE_BLADE_1
+        - STR_FROST_BLADE_1
+        - STR_FROST_BLADE_2
+        - STR_ARCANE_SHORT_SWORD_1
+        - STR_KNIFE
+        - STR_SPEAR_1
+        - STR_SHORT_SWORD_1
+        - STR_SHORT_SWORD_POISON
+        - STR_SHORT_SWORD_FROST
+        - STR_SWORD_1
+        - STR_AXE_1
+        - STR_PSIONIC_1
+        - STR_ROUND_SHIELD
+        - STR_KITE_SHIELD_1
+        - STR_INVADER_REPORT_ORDERS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_SKY_UNDER_CONTROL:
+        - STR_INVADERS_CRUISE
+        - STR_INVADERS_RAID
+        - STR_INVADERS_TERROR
+        - STR_INVADERS_CAMP
+        - STR_INVADERS_FORT
+        - STR_INVADERS_RETALIATION
+      STR_WANDS_USE: 
+        - STR_WAND_FIRE_1
+        - STR_WAND_FIRE_2
+        - STR_WAND_ICE_1
+        - STR_WAND_ACID_1
+        - STR_WAND_SHOCK_1
+        - STR_WAND_WIND_1
+        - STR_WAND_WIND_2
+  - name: STR_LEGION_MANIPUL_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_WIZARD
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_WIZARD_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_PSIONIC_1
+        - STR_MIND_TRICKS
+        - STR_WATER_SHIELD
+        - STR_AIR_SHIELD
+        - STR_STONE_SHIELD
+        - STR_OUTCAST_OVERVIEW
+        - STR_FIRE_MAGE_OVERVIEW
+        - STR_RUNEMAGE_OVERVIEW
+        - STR_NECROMANCER_OVERVIEW
+        - STR_INVADER_REPORT_ORDERS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_RUNES_PRE
+        - STR_INITIATION
+  - name: STR_WIZARD_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_WIZARDS
+    requiresBaseFunc: [HQFUNC]
+    cost: 50
+    points: 20
+    dependencies:
+      - STR_WIZARD
+        
+  - name: STR_FIRE_MAGE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_FIRE_MAGE_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_PSIONIC_1
+        - STR_INVADER_REPORT_ORDERS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_INITIATION
+        - STR_FIRE_MAGIC
+  - name: STR_FIRE_MAGE_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_FIRE_MAGES
+    requiresBaseFunc: [HQFUNC]
+    cost: 50
+    points: 20
+    dependencies:
+      - STR_FIRE_MAGE
+      
+  - name: STR_RUNEMAGE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_RUNEMAGE_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_PSIONIC_1  
+        - STR_WATER_SHIELD
+        - STR_AIR_SHIELD
+        - STR_STONE_SHIELD
+        - STR_INVADER_REPORT_ORDERS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_INITIATION
+        - STR_RUNES_PRE
+      STR_RUNES_1:
+        - STR_RUNES_2_PRE
+  - name: STR_RUNEMAGE_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_RUNEMAGES
+    requiresBaseFunc: [HQFUNC]
+    cost: 50
+    points: 20
+    dependencies:
+      - STR_RUNEMAGE
+      
+  - name: STR_WITCH
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_WITCH_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_PSIONIC_1
+        - STR_DARK_SHIELD
+        - STR_MIND_TRICKS
+        - STR_WAND_FIRE_1
+        - STR_INVADER_REPORT_ORDERS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_DARK_MAGIC_PRE
+        - STR_INITIATION
+      STR_WANDS_USE: 
+        - STR_WAND_FIRE_1
+        - STR_WAND_FIRE_2
+        - STR_WAND_ICE_1
+        - STR_WAND_ACID_1
+        - STR_WAND_SHOCK_1
+        - STR_WAND_WIND_1
+        - STR_WAND_WIND_2
+        - STR_WAND_WIND_3
+        - STR_WAND_DARK_1
+  - name: STR_WITCH_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_DEATH_TEMPLE
+    requiresBaseFunc: [HQFUNC]
+    cost: 120
+    points: 200
+    dependencies:
+      - STR_SKELETON_GUARD
+      - STR_DOOM_KNIGHT
+      - STR_NECROMANCER
+      - STR_DARK_LADY
+      
+  - name: STR_NECROMANCER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_NECROMANCER_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_PSIONIC_1
+        - STR_DARK_SHIELD
+        - STR_SKELETON_OVERVIEW
+        - STR_SKELETON_GUARD_OVERVIEW
+        - STR_ZOMBIE_OVERVIEW
+        - STR_GHOUL_OVERVIEW
+        - STR_DARK_LADY_OVERVIEW
+        - STR_SPIRIT_RED
+        - STR_SPIRIT_BLACK
+        - STR_INVADER_REPORT_ORDERS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_DARK_MAGIC_PRE
+        - STR_INITIATION
+    unlocks:
+        - STR_NECROMANCY_PRE
+  - name: STR_NECROMANCER_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_DARK_LADY
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_DARK_LADY_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_PSIONIC_1
+        - STR_DARK_SHIELD
+        - STR_SKELETON_OVERVIEW
+        - STR_SKELETON_GUARD_OVERVIEW
+        - STR_ZOMBIE_OVERVIEW
+        - STR_GHOUL_OVERVIEW
+        - STR_NECROMANCER_OVERVIEW
+        - STR_DOOM_KNIGHT
+        - STR_SPIRIT_RED
+        - STR_SPIRIT_BLACK
+        - STR_INVADER_REPORT_ORDERS
+        - STR_TEMPLES_MESS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_DARK_MAGIC_PRE
+        - STR_INITIATION
+      STR_RUNES_2:
+        - STR_RUNE_RULES
+    unlocks:
+        - STR_HIGH_NECROMANCY_PRE
+  - name: STR_DARK_LADY_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_FIRE_INITIATE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_FIRE_INITIATE_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_KNIFE
+        - STR_SPEAR_1
+        - STR_SHORT_SWORD_1
+        - STR_SWORD_1
+        - STR_AXE_1
+        - STR_ROUND_SHIELD
+        - STR_KITE_SHIELD_1
+        - STR_FIRE_PENANT_OVERVIEW
+        - STR_FIRE_PRIEST_OVERVIEW
+        - STR_FIRE_PRIEST_2_OVERVIEW
+        - STR_FIRE_PALADIN_OVERVIEW
+        - STR_PSIONIC_1
+        - STR_TEMPLES_MESS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_WANDS_USE: 
+        - STR_WAND_FIRE_1
+        - STR_WAND_FIRE_2
+      STR_SCEPTERS_USE: 
+        - STR_SCEPTER_FIRE_1
+      STR_PSIONIC_2:
+        - STR_INITIATION
+  - name: STR_FIRE_INITIATE_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_FIRE_PENANT
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_FIRE_PENANT_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_FIRE_BLADE_1
+        - STR_FROST_BLADE_1
+        - STR_FROST_BLADE_2
+        - STR_ARCANE_SHORT_SWORD_1
+        - STR_KNIFE
+        - STR_SPEAR_1
+        - STR_SHORT_SWORD_1
+        - STR_SWORD_1
+        - STR_AXE_1
+        - STR_AXE_2
+        - STR_AXE_3
+        - STR_AXE_FIRE
+        - STR_SWORD_FIRE
+        - STR_SPIKED_MACE
+        - STR_MAUL
+        - STR_MAUL_FIRE
+        - STR_ROUND_SHIELD
+        - STR_FIRE_INITIATE_OVERVIEW
+        - STR_FIRE_PRIEST_OVERVIEW
+        - STR_FIRE_PRIEST_2_OVERVIEW
+        - STR_FIRE_PALADIN_OVERVIEW
+        - STR_PSIONIC_1
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+
+  - name: STR_FIRE_PENANT_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_FIRE_PRIEST
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_FIRE_PRIEST_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_INVADER_REPORT_ORDERS
+        - STR_ALLODS
+        - STR_PSIONIC_1
+        - STR_SWORD_FIRE
+        - STR_AXE_FIRE
+        - STR_MAUL_FIRE
+        - STR_FLAME_WHIP
+        - STR_FIRE_INITIATE_OVERVIEW
+        - STR_FIRE_PENANT_OVERVIEW
+        - STR_FIRE_PRIEST_2_OVERVIEW
+        - STR_FIRE_PALADIN_OVERVIEW
+        - STR_HUGE_SHIP_1
+        - STR_TEMPLES_MESS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_INITIATION
+        - STR_FIRE_MAGIC
+  - name: STR_FIRE_PRIEST_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+        
+  - name: STR_FIRE_PRIEST_2
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_FIRE_PRIEST_2_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_INVADER_REPORT_ORDERS
+        - STR_ALLODS
+        - STR_PSIONIC_1  
+        - STR_SWORD_FIRE
+        - STR_AXE_FIRE
+        - STR_MAUL_FIRE
+        - STR_FLAME_WHIP
+        - STR_FIRE_INITIATE_OVERVIEW
+        - STR_FIRE_PENANT_OVERVIEW
+        - STR_FIRE_PRIEST_OVERVIEW
+        - STR_FIRE_PALADIN_OVERVIEW
+        - STR_TEMPLES_MESS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_INITIATION
+        - STR_FIRE_MAGIC
+      STR_RUNES_2:
+        - STR_RUNE_RULES
+  - name: STR_FIRE_PRIEST_2_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_FIRE_PRIESTS
+    requiresBaseFunc: [HQFUNC]
+    cost: 50
+    points: 20
+    dependencies:
+      - STR_FIRE_PRIEST
+      - STR_FIRE_PRIEST_2
+      
+  - name: STR_FIRE_PALADIN
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_FIRE_PALADIN_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_FIRE_BLADE_1
+        - STR_FROST_BLADE_1
+        - STR_FROST_BLADE_2
+        - STR_ARCANE_SHORT_SWORD_1
+        - STR_ARCANE_BLADE_1
+        - STR_ARCANE_BLADE_2
+        - STR_SHOCK_BLADE_1
+        - STR_KNIFE
+        - STR_SPEAR_1
+        - STR_SHORT_SWORD_1
+        - STR_SWORD_1
+        - STR_AXE_1
+        - STR_AXE_2
+        - STR_AXE_3
+        - STR_AXE_FIRE
+        - STR_SPIKED_MACE
+        - STR_BARBARIAN_SWORD
+        - STR_SWORD_SHOCK
+        - STR_SWORD_FIRE
+        - STR_MAUL
+        - STR_MAUL_FIRE
+        - STR_MAUL_FLASH
+        - STR_ROUND_SHIELD
+        - STR_KITE_SHIELD_1
+        - STR_TOWER_SHIELD_1
+        - STR_FIRE_INITIATE_OVERVIEW
+        - STR_FIRE_PENANT_OVERVIEW
+        - STR_FIRE_PRIEST_OVERVIEW
+        - STR_FIRE_PRIEST_2_OVERVIEW
+        - STR_PSIONIC_1
+        - STR_TEMPLES_MESS
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+
+  - name: STR_FIRE_PALADIN_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_THUNDER_ACOLYTE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_THUNDER_ACOLYTE_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_KNIFE
+        - STR_SPEAR_1
+        - STR_SHORT_SWORD_1
+        - STR_SHORT_SWORD_FROST
+        - STR_SWORD_1
+        - STR_AXE_1
+        - STR_ROUND_SHIELD
+        - STR_KITE_SHIELD_1
+        - STR_PSIONIC_1
+        - STR_TEMPLES_MESS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_WANDS_USE: 
+        - STR_WAND_SHOCK_1
+      STR_SCEPTERS_USE: 
+        - STR_SCEPTER_SHOCK_1
+      STR_PSIONIC_2:
+        - STR_INITIATION
+  - name: STR_THUNDER_ACOLYTE_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_THUNDER_DEVOTED
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_THUNDER_DEVOTED_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_FIRE_BLADE_1
+        - STR_FROST_BLADE_1
+        - STR_FROST_BLADE_2
+        - STR_ARCANE_SHORT_SWORD_1
+        - STR_KNIFE
+        - STR_SPEAR_1
+        - STR_SHORT_SWORD_1
+        - STR_SHORT_SWORD_FROST
+        - STR_SWORD_1
+        - STR_AXE_1
+        - STR_AXE_2
+        - STR_AXE_3
+        - STR_AXE_SHOCK
+        - STR_SWORD_SHOCK
+        - STR_MAUL_SHOCK
+        - STR_ROUND_SHIELD
+        - STR_KITE_SHIELD_1
+        - STR_TOWER_SHIELD_1
+        - STR_PSIONIC_1
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+  - name: STR_THUNDER_DEVOTED_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_THUNDER_PRIEST
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_THUNDER_PRIEST_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_INVADER_REPORT_ORDERS
+        - STR_ALLODS
+        - STR_PSIONIC_1  
+        - STR_THUNDER_DEVOTED_OVERVIEW
+        - STR_THUNDER_ACOLYTE_OVERVIEW
+        - STR_THUNDER_PRELAT_OVERVIEW
+        - STR_HUGE_SHIP_1
+        - STR_TEMPLES_MESS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_INITIATION
+  - name: STR_THUNDER_PRIEST_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_THUNDER_PRIESTS
+    requiresBaseFunc: [HQFUNC]
+    cost: 50
+    points: 20
+    dependencies:
+      - STR_THUNDER_PRIEST
+      
+  - name: STR_THUNDER_PRELAT
+    cost: 220
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_THUNDER_PRELAT_OVERVIEW
+    unlocks:
+      - STR_INVADER_LEADER_INTERROGATION
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected: #! advanced knowledge here
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_INVADER_REPORT_ORDERS
+        - STR_ALLODS
+        - STR_PSIONIC_1  
+        - STR_TEMPLES_MESS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_INITIATION
+      STR_RUNES_2:
+        - STR_RUNE_RULES
+  - name: STR_THUNDER_PRELAT_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_BLESSED_FOOTMAN
+    cost: 210
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_BLESSED_FOOTMAN_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_SWORD_1
+        - STR_SWORD_2
+        - STR_SWORD_FLASH
+        - STR_BLESSED_ROUND_SHIELD
+        - STR_AXE_3
+        - STR_SPIKED_MACE
+        - STR_LEGION_SHIELD_1
+      STR_SKY_UNDER_CONTROL:
+        - STR_INVADERS_CRUISE
+        - STR_INVADERS_RAID
+        - STR_INVADERS_TERROR
+        - STR_INVADERS_CAMP
+        - STR_INVADERS_FORT
+        - STR_INVADERS_RETALIATION
+  - name: STR_BLESSED_FOOTMAN_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_PRIESTESS
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_PRIESTESS_OVERVIEW
+    unlocks:
+      - STR_BLESSINGS_PRE
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_INVADER_REPORT_ORDERS
+        - STR_ALLODS
+        - STR_PSIONIC_1
+        - STR_BLESSED_FOOTMAN_OVERVIEW
+        - STR_PALADIN_OVERVIEW
+        - STR_WS_TERRORIST
+        - STR_HUGE_SHIP_1
+        - STR_TEMPLES_MESS
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_INITIATION
+        - STR_LIGHT_MAGIC
+  - name: STR_PRIESTESS_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_PALADIN
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_PALADIN_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_INVADER_REPORT_PALADIN #Multiple choices here!!!
+        - STR_SPIKED_MACE
+        - STR_BARBARIAN_SWORD
+        - STR_SWORD_SHOCK
+        - STR_SWORD_FIRE
+        - STR_SWORD_FLASH
+        - STR_MAUL
+        - STR_MAUL_FIRE
+        - STR_MAUL_FLASH
+        - STR_ROUND_SHIELD
+        - STR_KITE_SHIELD_1
+        - STR_TOWER_SHIELD_1
+        - STR_BLESSED_ROUND_SHIELD
+        - STR_BLESSED_FOOTMAN_OVERVIEW
+        - STR_PRIESTESS_OVERVIEW
+        - STR_PSIONIC_1
+        - STR_TEMPLES_MESS
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+
+  - name: STR_PALADIN_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_SPIRITIST
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_SPIRITIST_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_ORDERS
+        - STR_PSIONIC_1
+        - STR_SPIRIT_RED
+        - STR_SPIRIT_BLACK
+        - STR_SPIRIT_YELLOW
+        - STR_UNICORN
+        - STR_CLAY_GOLEM
+        - STR_STONE_GOLEM
+        - STR_WS_TERRORIST
+        - STR_PHOENIX
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_INITIATION
+        - STR_LIGHT_MAGIC
+        - STR_DARK_MAGIC_PRE
+  - name: STR_SPIRITIST_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_SPIRITISTS
+    requiresBaseFunc: [HQFUNC]
+    cost: 50
+    points: 20
+    dependencies:
+      - STR_SPIRITIST
+      
+  - name: STR_BARON
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_BARON_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_ORDERS
+        - STR_LEGEND_DRAGONS
+        - STR_ALLODS
+        - STR_PSIONIC_1
+        - STR_WATER_SHIELD
+        - STR_AIR_SHIELD
+        - STR_STONE_SHIELD
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_SKY_UNDER_CONTROL:
+        - STR_SMALL_BOAT
+        - STR_SMALL_BARGE
+        - STR_MEDIUM_BARGE
+        - STR_INVADERS_CRUISE
+        - STR_INVADERS_RAID
+        - STR_INVADERS_TERROR
+        - STR_INVADERS_CAMP
+        - STR_INVADERS_RETALIATION
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE 
+  - name: STR_BARON_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+  - name: STR_PIRATE_SOLDIER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_PIRATE_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_DRAGONS
+        - STR_TALON_BLADE_1
+        - STR_SHORT_SWORD_1
+        - STR_SHORT_SWORD_POISON
+        - STR_SHORT_SWORD_FROST
+        - STR_PIRATE_BLADE_1
+        - STR_ROGUE_BLADE_1
+        - STR_ROGUE_BLADE_2
+        - STR_SPEAR_1
+  - name: STR_PIRATE_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+  - name: STR_PIRATESS
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_PIRATESS_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_DRAGONS
+        - STR_BOW
+        - STR_LONGBOW
+        - STR_ARROWS
+        - STR_SPEAR_1
+        - STR_JAVELINS
+        - STR_THROWING_AXES
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+  - name: STR_PIRATESS_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true  
+    
+  - name: STR_PIRATE_BRUTE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_PIRATE_BRUTE_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_LEGEND_DRAGONS
+        - STR_SWORD_1
+        - STR_AXE_3
+        - STR_SPIKED_MACE
+        - STR_KITE_SHIELD_1
+        - STR_BARDICHE
+        - STR_BARBARIAN_SWORD
+  - name: STR_PIRATE_BRUTE_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_PIRATE_CAPTAIN
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_PIRATE_CAPTAIN_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+      STR_SKY_UNDER_CONTROL:
+        - STR_SMALL_BOAT
+        - STR_SMALL_BARGE
+        - STR_MEDIUM_BARGE
+        - STR_SMALL_SHIP
+        - STR_SMALL_SHIP_2
+        - STR_MEDIUM_SHIP_1
+        - STR_LARGE_SHIP_1
+        - STR_LARGE_SHIP_2
+        - STR_LARGE_SHIP_3
+        - STR_INVADERS_CRUISE
+        - STR_INVADERS_RAID
+        - STR_INVADERS_TERROR
+        - STR_INVADERS_CAMP
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+  - name: STR_PIRATE_CAPTAIN_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true  
+    
+  - name: STR_FOOTMAN_SOLDIER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_FOOTMAN_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!  
+        - STR_INVADER_REPORT_ORDERS
+        - STR_LEGEND_DRAGONS
+        - STR_SPEAR_1
+        - STR_SWORD_1
+        - STR_SHORT_SWORD_1
+        - STR_SHORT_SWORD_POISON
+        - STR_AXE_1
+        - STR_AXE_2
+        - STR_AXE_3
+        - STR_KNIFE
+  - name: STR_FOOTMAN_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_RANGER_SOLDIER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_RANGER_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!  
+        - STR_INVADER_REPORT_ORDERS
+        - STR_LEGEND_DRAGONS
+        - STR_BOW
+        - STR_LONGBOW
+        - STR_ARROWS
+        - STR_SPEAR_1
+        - STR_KNIFE
+        - STR_KAA_AUTOPSY
+        - STR_FLOATER_AUTOPSY
+        - STR_DIRE_RAT_AUTOPSY
+        - STR_SHADOW_BAT_AUTOPSY
+        - STR_FIREFLY_AUTOPSY
+        - STR_GIANT_AUTOPSY
+        - STR_GIANT_SCORPION_AUTOPSY
+        - STR_MEGAWORM_AUTOPSY
+        - STR_SLIME_AUTOPSY
+        - STR_SNIPER_BEETLE_AUTOPSY
+        - STR_SPIKEBOAR_AUTOPSY
+        - STR_WEREWOLF_AUTOPSY
+        - STR_GLASS_SPIDER_AUTOPSY
+  - name: STR_RANGER_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_HEAVY_FOOTMAN_SOLDIER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_HEAVY_FOOTMAN_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_LEGEND_DRAGONS
+        - STR_AXE_1
+        - STR_AXE_2
+        - STR_AXE_3
+        - STR_MAUL
+        - STR_BARDICHE
+        - STR_SPIKED_MACE
+        - STR_BARBARIAN_SWORD
+  - name: STR_HEAVY_FOOTMAN_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true    
+    
+  - name: STR_PSYKER
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_PSYKER_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_INVADER_REPORT_ORDERS
+        - STR_MIND_TRICKS
+      STR_SKY_UNDER_CONTROL:
+        - STR_ADVENT_RAID
+        - STR_ALIEN_RAID
+        - STR_ALIEN_BASE_2
+      STR_WANDS_USE: 
+        - STR_WAND_FIRE_1
+        - STR_WAND_FIRE_2
+        - STR_WAND_ICE_1
+        - STR_WAND_ACID_1
+        - STR_WAND_SHOCK_1
+        - STR_WAND_WIND_1
+        - STR_WAND_WIND_2
+        - STR_WAND_WIND_3
+        - STR_WAND_DARK_1
+      STR_SCEPTERS_USE: 
+        - STR_SCEPTER_FIRE_1
+        - STR_SCEPTER_FROST_1
+        - STR_SCEPTER_SHOCK_1
+        - STR_SCEPTER_AIR_1
+        - STR_SCEPTER_DARK_1
+        - STR_SCEPTER_LIGHT_1
+  - name: STR_PSYKER_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_PSYKERS
+    requiresBaseFunc: [HQFUNC]
+    cost: 50
+    points: 20
+    dependencies:
+      - STR_PSYKER
+
+  - name: STR_SPELLSWORD
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_SPELLSWORD_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!! 
+        - STR_INVADER_REPORT_ORDERS
+        - STR_LEGEND_DRAGONS
+        - STR_SWORD_1
+        - STR_SWORD_2
+        - STR_SHORT_SWORD_1
+        - STR_SHORT_SWORD_POISON
+        - STR_ARCANE_SHORT_SWORD_1
+        - STR_SHORT_SWORD_FROST
+        - STR_SWORD_FIRE
+        - STR_SWORD_SHOCK
+        - STR_ROUND_SHIELD
+      STR_SKY_UNDER_CONTROL:
+        - STR_ADVENT_RAID
+        - STR_ALIEN_RAID
+        - STR_ALIEN_BASE_2
+      STR_WANDS_USE: 
+        - STR_WAND_FIRE_1
+        - STR_WAND_FIRE_2
+        - STR_WAND_ICE_1
+        - STR_WAND_ACID_1
+        - STR_WAND_SHOCK_1
+        - STR_WAND_WIND_1
+        - STR_WAND_WIND_2
+        - STR_WAND_WIND_3
+        - STR_WAND_DARK_1
+  - name: STR_SPELLSWORD_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_SPELLSWORDS
+    requiresBaseFunc: [HQFUNC]
+    cost: 50
+    points: 20
+    dependencies:
+      - STR_SPELLSWORD
+        
+  - name: STR_KNIGHT
+    cost: 220
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_KNIGHT_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_SWORD_1
+        - STR_SWORD_2
+        - STR_SWORD_FIRE
+        - STR_SWORD_SHOCK
+        - STR_ROUND_SHIELD
+        - STR_KITE_SHIELD_1
+        - STR_TOWER_SHIELD_1
+  - name: STR_KNIGHT_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+  - name: STR_KNIGHT_CAPTAIN
+    cost: 220
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_KNIGHT_CAPTAIN_OVERVIEW
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected:
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1
+        - STR_INVADER_REPORT_1 #Multiple choices here!!!
+        - STR_INVADER_REPORT_ORDERS
+        - STR_SWORD_1
+        - STR_SWORD_2
+        - STR_SWORD_FIRE
+        - STR_SWORD_SHOCK
+        - STR_ROUND_SHIELD
+        - STR_KITE_SHIELD_1
+        - STR_TOWER_SHIELD_1
+  - name: STR_KNIGHT_CAPTAIN_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_ARCHMAGE
+    cost: 220
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_ARCHMAGE_OVERVIEW
+    unlocks:
+      - STR_INVADER_LEADER_INTERROGATION
+    getOneFree:
+      - STR_INVADER_LANGUAGE_1
+    getOneFreeProtected: #! advanced knowledge here
+      STR_INVADER_LANGUAGE_2:
+        - STR_WHAT_TO_SEEK1        
+        - STR_PSIONIC_1  
+      STR_PSIONIC_1:
+        - STR_WANDS_USE_PRE
+        - STR_SCEPTERS_USE_PRE
+      STR_WHAT_TO_SEEK2:
+        - STR_WHAT_TO_SEEK3
+      STR_PSIONIC_2:
+        - STR_INITIATION
+      STR_RUNES_2:
+        - STR_RUNE_RULES
+  - name: STR_ARCHMAGE_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+#-------------------------------------------Psion enemy
+  - name: STR_MALE_MAD_PSION
+    cost: 100
+    points: 10
+    needItem: true
+    destroyItem: true
+    lookup: STR_MALE_MAD_PSION_OVERVIEW
+    unlocks:
+      - STR_WILD_PSIONS
+  - name: STR_MALE_MAD_PSION_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+  - name: STR_FEMALE_MAD_PSION
+    cost: 100
+    points: 10
+    needItem: true
+    destroyItem: true
+    lookup: STR_FEMALE_MAD_PSION_OVERVIEW
+    unlocks: 
+      - STR_WILD_PSIONS
+  - name: STR_FEMALE_MAD_PSION_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_WILD_PSIONS
+    requiresBaseFunc: [HQFUNC]
+    cost: 250
+    points: 25
+    dependencies:
+      - STR_MALE_MAD_PSION
+      - STR_FEMALE_MAD_PSION
+    unlocks: 
+      - STR_PSION_PULSE
+  - name: STR_PSION_PULSE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_WILD_PSIONS
+
+  - name: STR_PSION_AGENT
+    cost: 300
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_PSION_AGENT_OVERVIEW
+    unlocks: 
+      - STR_RIVAL_ACTIONS
+  - name: STR_PSION_AGENT_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+#-------------------------------------------Animals---------------------------------
+  - name: STR_KAA_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_KAA_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_KAA_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_KAA_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks: 
+      - STR_CHEMICAL_DANGER
+      - STR_ENEMY_DETECTION_PRE
+            
+  - name: STR_FLOATER_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_FLOATER_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+      
+  - name: STR_FLOATER_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_FLOATER_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks: 
+      - STR_CHEMICAL_DANGER
+    
+  - name: STR_MEDUSA_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_MEDUSA_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+      
+  - name: STR_MEDUSA_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_MEDUSA_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks: 
+      - STR_CHEMICAL_DANGER
+    
+  - name: STR_DIRE_RAT_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_DIRE_RAT_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_DIRE_RAT_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_DIRE_RAT_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks: 
+      - STR_ANTITOXIN
+      - STR_ENEMY_DETECTION_PRE
+    
+  - name: STR_PLAGUE_RAT_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_DIRE_RAT_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                  
+  - name: STR_PLAGUE_RAT_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks: 
+      - STR_CHEMICAL_DANGER
+      - STR_ENEMY_DETECTION_PRE
+            
+  - name: STR_SHADOW_BAT_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_SHADOW_BAT_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_SHADOW_BAT_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_SHADOW_BAT_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks: 
+      - STR_ENEMY_DETECTION_PRE
+      
+  - name: STR_MIST_BAT_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_SHADOW_BAT_TERRORIST
+    unlocks: 
+      - STR_ENEMY_DETECTION_PRE
+      
+  - name: STR_FIREFLY_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_FIREFLY_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_FIREFLY_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_FIREFLY_TERRORIST
+    cost: 250
+    points: 25
+    needItem: true
+    destroyItem: true
+    unlocks: 
+      - STR_FIREFLY_LARGE_TERRORIST
+  - name: STR_FIREFLY_LARGE_TERRORIST
+    cost: 250
+    points: 25
+    needItem: true
+    destroyItem: true
+    lookup: STR_FIREFLY_TERRORIST
+    unlocks: 
+      - STR_FIREFLY_TERRORIST
+            
+  - name: STR_GIANT_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_GIANT_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_GIANT_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_GIANT_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    
+  - name: STR_GIANT_SCORPION_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_GIANT_SCORPION_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_GIANT_SCORPION_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_GIANT_SCORPION_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks: 
+      - STR_ANTITOXIN
+    
+  - name: STR_MEGAWORM_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_MEGAWORM_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_MEGAWORM_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_MEGAWORM_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    
+  - name: STR_SLIME_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_SLIME_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_SLIME_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_SLIME_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks: 
+      - STR_CHEMICAL_DANGER
+    
+  - name: STR_SNIPER_BEETLE_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_SNIPER_BEETLE_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_SNIPER_BEETLE_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_SNIPER_BEETLE_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_ENEMY_DETECTION_PRE
+    
+  - name: STR_BOMBER_BEETLE_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_BOMBER_BEETLE_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_BOMBER_BEETLE_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_BOMBER_BEETLE_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_ENEMY_DETECTION_PRE
+    
+  - name: STR_SPIKEBOAR_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_SPIKEBOAR_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_SPIKEBOAR_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_SPIKEBOAR_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    
+  - name: STR_WEREWOLF_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_WEREWOLF_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_WEREWOLF_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_WEREWOLF_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+                
+  - name: STR_WEREWOLF_WHITE_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    
+  - name: STR_WEREWOLF_WHITE_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_WEREWOLF_WHITE_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_WEREWOLF_WHITE_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+      
+  - name: STR_GLASS_SPIDER_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_GLASS_SPIDER_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_GLASS_SPIDER_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_GLASS_SPIDER_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_ENEMY_DETECTION_PRE
+      - STR_ANTITOXIN
+    
+  - name: STR_PRISM_SPIDER_CORPSE
+    cost: 200
+    points: 50
+    lookup: STR_PRISM_SPIDER_AUTOPSY
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+                
+  - name: STR_PRISM_SPIDER_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_PRISM_SPIDER_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_ENEMY_DETECTION_PRE
+#-------------------------------------------Anomal corpses
+
+  - name: STR_CLAY_CORPSE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_CLAY_GOLEM_AUTOPSY
+    unlocks:
+      - STR_SHIELDED_PRISON
+      - STR_PSEUDOMATTER_PRE
+  - name: STR_CLAY_GOLEM_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+        
+  - name: STR_CLAY_GOLEM
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_EARTH_MAGIC
+      
+  - name: STR_STONE_CORPSE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_STONE_GOLEM_AUTOPSY
+    unlocks:
+      - STR_SHIELDED_PRISON
+      - STR_PSEUDOMATTER_PRE
+  - name: STR_STONE_GOLEM_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+        
+  - name: STR_STONE_GOLEM
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_EARTH_MAGIC
+      
+  - name: STR_ICE_DEMON_CORPSE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+      - STR_PSEUDOMATTER_PRE
+    lookup: STR_ICE_DEMON_AUTOPSY
+  - name: STR_ICE_DEMON_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+        
+  - name: STR_ICE_DEMON
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_WATER_MAGIC
+      
+  - name: STR_FROST_DEMON_CORPSE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+      - STR_PSEUDOMATTER_PRE
+    lookup: STR_FROST_DEMON_AUTOPSY
+  - name: STR_FROST_DEMON_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+
+  - name: STR_SPIRIT_BLACK
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true 
+  - name: STR_SPIRIT_RED
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true 
+  - name: STR_SPIRIT_YELLOW
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true 
+        
+  - name: STR_FROST_DEMON
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    getOneFree:
+      - STR_BLIZZARD_1
+    unlocks:
+      - STR_WATER_MAGIC
+  - name: STR_UNICORN
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true 
+    unlocks:
+      - STR_LIGHT_MAGIC
+  - name: STR_WS_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true 
+    unlocks:
+      - STR_LIGHT_MAGIC
+      
+  - name: STR_SLUDGY_CORPSE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+      - STR_PSEUDOMATTER_PRE
+    lookup: STR_SLUDGE_DEMON_AUTOPSY
+  - name: STR_SLUDGE_DEMON_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+        
+  - name: STR_SLUDGY_DEMON
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_DARK_MAGIC
+      
+  - name: STR_PHOENIX_CORPSE_TRUE
+    cost: 200
+    points: 50
+    needItem: true
+    destroyItem: true 
+    unlocks: 
+      - STR_SHIELDED_PRISON
+      - STR_PSEUDOMATTER_PRE
+    lookup: STR_PHOENIX_AUTOPSY
+  - name: STR_PHOENIX_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+        
+  - name: STR_PHOENIX
+    cost: 270
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_FIRE_MAGIC
+      
+#-------------------------------------------Undead
+
+  - name: STR_SKELETON_CORPSE
+    cost: 50
+    points: 50
+    needItem: true
+    destroyItem: true     
+    lookup: STR_SKELETON_AUTOPSY    
+  - name: STR_SKELETON_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true  
+    
+  - name: STR_SKELETON_SOLDIER
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_SKELETON_OVERVIEW
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+  - name: STR_SKELETON_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+      
+  - name: STR_SKELETON_GUARD_CORPSE
+    cost: 50
+    points: 50
+    needItem: true
+    destroyItem: true     
+    lookup: STR_SKELETON_GUARD_AUTOPSY    
+  - name: STR_SKELETON_GUARD_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true  
+    
+  - name: STR_SKELETON_GUARD
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_SKELETON_GUARD_OVERVIEW
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+  - name: STR_SKELETON_GUARD_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+      
+  - name: STR_GHOUL_CORPSE
+    cost: 50
+    points: 50
+    needItem: true
+    destroyItem: true   
+    lookup: STR_GHOUL_AUTOPSY    
+  - name: STR_GHOUL_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true  
+    
+  - name: STR_GHOUL_TERRORIST
+    cost: 300
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_GHOUL_OVERVIEW
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+  - name: STR_GHOUL_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+      
+  - name: STR_ZOMBIE_CORPSE
+    cost: 50
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_ZOMBIE_AUTOPSY
+  - name: STR_ZOMBIE_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+  - name: STR_ZOMBIE_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_ZOMBIE_TERRORIST
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_ZOMBIE_OVERVIEW
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+  - name: STR_WIGHT_CORPSE
+    cost: 50
+    points: 50
+    needItem: true
+    destroyItem: true   
+    lookup: STR_WIGHT_AUTOPSY    
+  - name: STR_WIGHT_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true  
+    
+  - name: STR_WIGHT_TERRORIST
+    cost: 400
+    points: 50
+    needItem: true
+    destroyItem: true
+    lookup: STR_WIGHT_OVERVIEW
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+  - name: STR_WIGHT_OVERVIEW
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_DOOM_CORPSE
+    cost: 150
+    points: 50
+    requiresBaseFunc: [SCRIPTOR]
+    needItem: true
+    destroyItem: true
+    
+  - name: STR_DOOM_KNIGHT
+    cost: 300
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+#-------------------------------------------Aliens----------------------------------
+  - name: STR_ALIEN_CORPSE
+    cost: 380
+    points: 50
+    lookup: STR_ALIEN_AUTOPSY
+    needItem: true
+    destroyItem: true        
+                   
+  - name: STR_ALIEN_AUTOPSY
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_ALIEN_ORGANS
+    cost: 350
+    points: 50
+    requiresBaseFunc: [SHIELDLAB]
+    dependencies: 
+      - STR_ALIEN_CORPSE
+      - STR_ARTIFACT_STRONG
+    
+  - name: STR_ALIEN_BIOLOGY_1
+    cost: 150
+    points: 20
+    dependencies: 
+      - STR_ALIEN_CORPSE
+#-----speedster aliens
+  - name: STR_BLINDWOLF_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 230
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPEEDSTERS
+
+  - name: STR_STALKER_1_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 230
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPEEDSTERS
+
+  - name: STR_STALKER_2_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 230
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPEEDSTERS
+      
+  - name: STR_CHUPA_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 230
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPEEDSTERS
+
+  - name: STR_GRAYHOUND_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 230
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPEEDSTERS
+
+  - name: STR_GHOSTHOUND_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 240
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPEEDSTERS
+
+  - name: STR_LEAPER_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPEEDSTERS
+
+  - name: STR_CHRYSSALID_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPEEDSTERS
+
+  - name: STR_SPEEDSTERS
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_BLINDWOLF_TERRORIST
+      - STR_STALKER_1_TERRORIST
+      - STR_CHUPA_TERRORIST
+      - STR_GRAYHOUND_TERRORIST
+      - STR_GHOSTHOUND_TERRORIST
+      - STR_LEAPER_TERRORIST
+      - STR_CHRYSSALID_TERRORIST
+#-----spitter aliens
+  - name: STR_LARVA_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 230
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPITTERS
+
+  - name: STR_FIRELARVA_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 230
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPITTERS
+
+  - name: STR_SPITTER_2_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 240
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPITTERS
+
+  - name: STR_CELATID_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SPITTERS
+
+  - name: STR_SPITTERS
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_LARVA_TERRORIST
+      - STR_FIRELARVA_TERRORIST
+      - STR_SPITTER_2_TERRORIST
+      - STR_CELATID_TERRORIST
+
+  - name: STR_OSTRICA_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+      - STR_CHAMELEATERS
+    getOneFree:
+      - STR_FIRE_BOLT_2
+      
+  - name: STR_CRAWLER_TERRORIST
+    requiresBaseFunc: [PSILAB]
+    cost: 320
+    points: 80
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_INVISIBILITY_PRE
+      - STR_CHAMELEATERS
+
+  - name: STR_CHAMELEATERS
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_OSTRICA_TERRORIST
+      - STR_CRAWLER_TERRORIST
+
+#-----caster aliens
+  - name: STR_GNUS_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_FIRE_BOLT_2
+      - STR_AIR_STRIKE_2
+      - STR_ARCANE_BOLT_2
+      - STR_ICE_BOLT_2
+      - STR_AIR_BLADE_2
+      - STR_LIGHTNING_BOLT_2
+      - STR_AIR_CLAW_2
+      - STR_FIRE_CLAW_2
+      - STR_CRYSTAL_CLAW_2
+      - STR_ICE_CLAW_2
+      - STR_ARCANE_CLAW_2
+      
+  - name: STR_PENEK_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_FIREBALL_2
+      - STR_ICE_COMET_2
+      - STR_MANA_BLAST_2
+      - STR_AIR_BLOW_2
+      - STR_STONE_SPIKE_2
+      - STR_NOVA_2
+      - STR_AIR_CLAW_2
+      - STR_FIRE_CLAW_2
+      - STR_CRYSTAL_CLAW_2
+      - STR_ICE_CLAW_2
+      - STR_ARCANE_CLAW_2
+      
+  - name: STR_TENTACLER_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+    getOneFree:
+      - STR_FIREBALL_2
+      - STR_FIRE_CLAW_2
+      - STR_ICE_COMET_2
+      - STR_ICE_CLAW_2
+      - STR_MANA_BLAST_2
+      - STR_ARCANE_CLAW_2
+      - STR_AIR_BLOW_2
+      - STR_AIR_CLAW_2
+      - STR_STONE_SPIKE_2
+      - STR_CRYSTAL_CLAW_2
+      - STR_BLIZZARD_2
+      - STR_SUFFOCATION_2
+      - STR_WARP_BOLT_2
+      - STR_DARK_CLAW_2
+      - STR_LIGHT_BLAST_2
+      - STR_LIGHT_CLAW_2
+      - STR_NOVA_2
+      - STR_LIGHTNING_BOLT_2
+      
+  - name: STR_FLIPPER_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_MANA_BLAST_2
+      - STR_AIR_BLOW_2
+      - STR_WARP_BOLT_2
+      - STR_AIR_TWISTER_2
+      - STR_FIREBALL_2
+      - STR_ICE_COMET_2
+      - STR_BLIZZARD_2
+      - STR_NOVA_2
+      - STR_NOVA_2
+      - STR_SUFFOCATION_2
+      
+  - name: STR_CRYSTALLINE_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_FIRE_BEAM_2
+      - STR_LIGHTNING_2
+      - STR_MANA_THUNDER_2
+      - STR_WARP_BLAST_2
+      - STR_FIRE_RAIN_2
+      - STR_AP_FIREBALL_2
+      - STR_DARK_TWISTER_2
+      - STR_TORNADO_2
+      
+  - name: STR_CRYSTALLINE_BLACK_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_DARK_TENTACLE_2
+      - STR_DARK_TWISTER_2
+      - STR_DARK_CLAW_2
+      
+  - name: STR_FINGER_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_AP_FIREBALL_2
+      - STR_FIRE_BEAM_2
+      - STR_MANA_BLAST_2
+      - STR_MANA_THUNDER_2
+      - STR_DARK_TWISTER_2
+      - STR_DARK_TENTACLE_2
+      - STR_NOVA_2
+      - STR_LIGHTNING_2
+      - STR_TORNADO_2
+      - STR_AIR_BLADE_2
+      
+  - name: STR_ELECTROSPIRIT_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_LIGHTNING_2
+      - STR_LIGHTNING_BOLT_2
+      - STR_NOVA_2
+      
+  - name: STR_JELLY_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_WARP_BOLT_2
+      - STR_WARP_BLAST_2
+      - STR_AIR_CLAW_2
+      
+  - name: STR_GLOW_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_LIGHT_MAGIC
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_LIGHT_CLAW_2
+      - STR_AP_FIREBALL_2
+      - STR_LIGHT_SPEAR_2
+      - STR_LIGHT_BLAST_2
+
+  - name: STR_DISC_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 300
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+      - STR_CASTERS
+    getOneFree:
+      - STR_FIRE_CLAW_2
+      - STR_MANA_THUNDER_2
+      - STR_AP_FIREBALL_2
+      - STR_ARCANE_CLAW_2
+      - STR_FIRE_BEAM_2
+      
+  - name: STR_GAZER_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_SIGILS_PRE
+    getOneFree:
+      - STR_DUST_HELM_2
+            
+  - name: STR_CASTERS
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GNUS_TERRORIST
+      - STR_PENEK_TERRORIST
+      - STR_TENTACLER_TERRORIST
+      - STR_FLIPPER_TERRORIST
+      - STR_CRYSTALLINE_TERRORIST
+      - STR_CRYSTALLINE_BLACK_TERRORIST
+      - STR_FINGER_TERRORIST
+      - STR_ELECTROSPIRIT_TERRORIST
+      - STR_JELLY_TERRORIST
+      - STR_GLOW_TERRORIST
+      - STR_DISC_TERRORIST
+      - STR_GAZER_TERRORIST
+
+  - name: STR_TENTACULAT_TERRORIST
+    requiresBaseFunc: [PSILAB]
+    cost: 350
+    points: 150
+    needItem: true
+    destroyItem: true
+    lookup: STR_MASTER_1
+    unlocks:
+      - STR_KEEPER_OVERVIEW
+    
+  - name: STR_KEEPER_OVERVIEW
+    cost: 0
+    points: 0
+    dependencies: 
+      - STR_TENTACULAT_TERRORIST
+
+  - name: STR_BRUTE_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 230
+    points: 30
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_BRUTES
+
+  - name: STR_DRAGONSNAKE_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 240
+    points: 40
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_BRUTES
+
+  - name: STR_SPIKER_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_BRUTES
+
+  - name: STR_BRUTES
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_BRUTE_TERRORIST
+      - STR_DRAGONSNAKE_TERRORIST
+      - STR_SPIKER_TERRORIST
+
+  - name: STR_BLOB_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_THREADERS
+
+  - name: STR_THREADER_TERRORIST
+    requiresBaseFunc: [POLYGON]
+    cost: 250
+    points: 50
+    needItem: true
+    destroyItem: true
+    unlocks:
+      - STR_THREADERS
+
+  - name: STR_THREADERS
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_BLOB_TERRORIST
+      - STR_THREADER_TERRORIST
+#-------------------------------------------Main researches---------------------
+
+  - name: STR_FIRST_CONTACT_ALIENS
+    requiresBaseFunc: [HQFUNC]
+    cost: 80
+    points: 50
+    lookup: STR_FIRST_CONTACT_ALIENS
+    dependencies: 
+      - STR_FIRST_CONTACT_ALIENS_PRE
+  - name: STR_FIRST_CONTACT_GOBLINS
+    requiresBaseFunc: [HQFUNC]
+    cost: 80
+    points: 50
+    dependencies: 
+      - STR_FIRST_CONTACT_GOBLINS_PRE
+  - name: STR_FIRST_CONTACT_INVADERS
+    requiresBaseFunc: [HQFUNC]
+    cost: 100
+    points: 50
+    dependencies: 
+      - STR_FIRST_CONTACT_INVADERS_PRE  
+  - name: STR_INVADER_LANGUAGE_2
+    cost: 210
+    points: 100
+    dependencies: 
+      - STR_INVADER_LANGUAGE_1
+  - name: STR_INVADER_LANGUAGE_3
+    cost: 300
+    points: 100
+    dependencies: 
+      - STR_INVADER_LANGUAGE_2
+      - STR_RUNES_1
+       
+  - name: STR_SKY_UNDER_CONTROL
+    requiresBaseFunc: [HQFUNC]
+    cost: 300
+    points: 100
+    dependencies: 
+      - STR_WHAT_TO_SEEK2      
+  - name: STR_AERIAL_CONTRACT_1
+    requiresBaseFunc: [HQFUNC]
+    cost: 350
+    points: 100
+    dependencies: 
+      - STR_SKY_UNDER_CONTROL
+      - STR_HEAVY_WEAPONS_PRE 
+  - name: STR_AERIAL_CONTRACT_2
+    requiresBaseFunc: [HQFUNC]
+    cost: 300
+    points: 100
+    dependencies: 
+      - STR_AERIAL_CONTRACT_1
+      - STR_X_CONTRACT
+
+  - name: STR_INTERNATIONALIZATION
+    cost: 350
+    points: 150
+    dependencies:
+      - STR_RIFT_OVERVIEW
+      
+  - name: STR_SEARCH_FOR_GIFTED
+    cost: 150
+    points: 50
+    dependencies:
+      - STR_INTERNATIONALIZATION
+      - STR_INITIATION
+      
+  - name: STR_RIVAL_ACTIONS
+    cost: 250
+    points: 100
+    dependencies:
+      - STR_PSION_AGENT
+
+  - name: STR_VIP_REPORT
+    cost: 10
+    points: 300
+    needItem: true
+    destroyItem: true
+
+  - name: STR_RIFT_OVERVIEW #Rift researched
+    requiresBaseFunc: [HQFUNC]
+    cost: 250
+    points: 100
+    dependencies: 
+      - STR_RIFT_OVERVIEW_PRE
+    
+  - name: STR_RIFT_STABILIZATON #Beyond Rift mission will spawn 
+    cost: 450
+    points: 100
+    dependencies: 
+      - STR_RIFT_OVERVIEW
+       
+  - name: STR_QUEEN_EMISSION
+    requiresBaseFunc: [PSILAB]
+    cost: 1000
+    points: 350
+    dependencies:
+      - STR_QUEEN_OBSERVATION
+      - STR_PSIONIC_2
+      
+  - name: STR_QUEEN_EMISSION_IMITATION
+    requiresBaseFunc: [PSILAB]
+    cost: 650
+    points: 150
+    dependencies:
+      - STR_QUEEN_EMISSION
+      - STR_MANA_CRYSTAL
+      
+  - name: STR_ALIEN_ORIGINS
+    requiresBaseFunc: [HQFUNC]
+    cost: 300
+    points: 60
+    dependencies:
+      - STR_QUEEN_OBSERVATION
+      
+  - name: STR_AGENDA
+    requiresBaseFunc: [HQFUNC]
+    cost: 300
+    points: 60
+    dependencies:
+      - STR_ALLODS
+      
+  - name: STR_LEGALIZATION
+    requiresBaseFunc: [HQFUNC]
+    cost: 100
+    points: -1000
+    dependencies:
+      - STR_ALIEN_ORIGINS
+      - STR_AGENDA
+      
+  - name: STR_SEARCH_FOR_INITIATED
+    cost: 150
+    points: 50
+    dependencies:
+      - STR_LEGALIZATION
+      - STR_INITIATION
+      - STR_WILD_PSIONS
+      - STR_SEARCH_FOR_GIFTED
+      
+  - name: STR_PSI_MILITIA
+    cost: 450
+    points: 200
+    dependencies:
+      - STR_SEARCH_FOR_INITIATED
+      - STR_MAGIC_THEORY
+      
+  - name: STR_SHARE_ADV_GUNS
+    cost: 100
+    points: 1000
+    requiresBaseFunc: [HQFUNC]
+    dependencies:
+      - STR_ADV_GUNS
+      - STR_PSI_MILITIA
+
+  - name: STR_WHERE_THEY_FROM
+    cost: 550
+    points: 1250
+    dependencies:
+      - STR_PSI_MILITIA
+      - STR_HYBRID_FIGHTER
+      - STR_INVADER_LEADER_INTERROGATION
+      
+  - name: STR_INVADER_LEADER_INTERROGATION
+    cost: 0
+    points: 0
+    needItem: true       
+
+  - name: STR_MASTER_1
+    cost: 450
+    points: 300
+    dependencies:
+      - STR_TENTACULAT_TERRORIST
+  
+  - name: STR_MAIN_THREAT
+    requiresBaseFunc: [HQFUNC]
+    cost: 300
+    points: 60
+    dependencies:
+      - STR_MASTER_1
+      - STR_AGENDA
+      
+  - name: STR_MASTER_2
+    cost: 450
+    points: 350
+    dependencies:
+      - STR_MASTER_2_PRE
+#-------------------------------------------Magic techs--------------------
+  - name: STR_PRIMITIVE_MAGIC
+    cost: 0
+    points: 0
+    needItem: true       
+    
+  - name: STR_PSIONIC_1
+    cost: 0
+    points: 0
+    needItem: true  
+    
+  - name: STR_WANDS_USE_PRE
+    cost: 0
+    points: 0
+    needItem: true
+    
+  - name: STR_WANDS_USE
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 100
+    dependencies:
+      - STR_WANDS_USE_PRE 
+      
+  - name: STR_SCEPTERS_USE_PRE
+    cost: 0
+    points: 0
+    needItem: true  
+    
+  - name: STR_SCEPTERS_USE
+    requiresBaseFunc: [SHIELDLAB,PSILAB]
+    cost: 400
+    points: 100
+    dependencies:
+      - STR_SCEPTERS_USE_PRE
+      
+  - name: STR_STAVES_USE
+    requiresBaseFunc: [SHIELDLAB, PSILAB]
+    cost: 400
+    points: 100
+    dependencies:
+      - STR_WANDS_USE
+      - STR_INITIATION
+
+  - name: STR_WANDS_BUILD_1
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 100
+    dependencies:
+      - STR_WANDS_USE
+      - STR_RUNES_2
+      - STR_MAGIC_MATERIALS
+      
+  - name: STR_STAVES_BUILD_1
+    requiresBaseFunc: [PSILAB,POLYGON]
+    cost: 350
+    points: 100
+    dependencies:
+      - STR_STAVES_USE
+      - STR_WANDS_BUILD_1
+      - STR_MANA_CRYSTAL
+      
+  - name: STR_WANDS_BUILD_2
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 400
+    points: 150
+    dependencies:
+      - STR_WANDS_BUILD_1
+      - STR_X_CONTRACT_LIGHT
+      
+  - name: STR_SCEPTERS_BUILD_2 #No n.1 exist
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 250
+    points: 100
+    dependencies:
+      - STR_WANDS_BUILD_2
+      - STR_SCEPTERS_USE
+
+  - name: STR_PSIONIC_2
+    cost: 500
+    points: 100
+    dependencies:
+      - STR_ARTIFACT_STRONG
+      
+  - name: STR_MIND_TRICKS
+    requiresBaseFunc: [SHIELDLAB, PSILAB]
+    cost: 400
+    points: 100
+    dependencies:
+      - STR_PSIONIC_2
+      - STR_KAA_TERRORIST
+      
+  - name: STR_INITIATION
+    cost: 0
+    points: 0
+    needItem: true  
+    
+  - name: STR_MANA_SOURCE_DETECTION
+    requiresBaseFunc: [PSILAB]
+    cost: 300
+    points: 100
+    dependencies:
+      - STR_UFO_POWER_SOURCE
+      - STR_ADVANCED_RADARS
+      
+  - name: STR_RUNES_PRE
+    cost: 0
+    points: 0
+    needItem: true   
+  - name: STR_RUNES_1 #written language
+    cost: 1000
+    points: 100
+    needItem: false
+    dependencies:
+      - STR_RUNES_PRE 
+  - name: STR_RUNES_2_PRE #runemage interrogation result
+    cost: 0
+    points: 0
+    needItem: true
+    dependencies:
+      - STR_RUNES_1 
+  - name: STR_RUNES_2 #Easy magic runes
+    cost: 600
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_RUNES_2_PRE 
+      
+  - name: STR_PSEUDOMATTER_PRE
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_ICE_DEMON_CORPSE
+      - STR_FROST_DEMON_CORPSE
+      - STR_CLAY_CORPSE
+      - STR_STONE_CORPSE
+      - STR_MANA_CRYSTAL
+      
+  - name: STR_PSEUDOMATTER
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 150
+    points: 50
+    dependencies:
+      - STR_INITIATION
+      - STR_PSEUDOMATTER_PRE
+      
+  - name: STR_MANA_CONDENSATION
+    requiresBaseFunc: [PSILAB,POLYGON]
+    cost: 250
+    points: 100
+    dependencies:
+      - STR_MANA_CRYSTAL
+      - STR_PSEUDOMATTER
+      - STR_POLYGON
+      
+  - name: STR_AMULET_CONSTRUCTION
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 100
+    dependencies:
+      - STR_RUNES_2
+      - STR_DAMAGED_AMULET
+      - STR_MAGIC_MATERIALS
+    
+  - name: STR_AMULET_CONSTRUCTION_2
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 350
+    points: 100
+    dependencies:
+      - STR_RUNES_3
+      - STR_AMULET_CONSTRUCTION
+    
+  - name: STR_COMMON_AMULETS
+    requiresBaseFunc: [SCRIPTOR]
+    cost: 300
+    points: 100
+    dependencies:
+      - STR_COMMON_RUNES
+      - STR_AMULET_CONSTRUCTION
+      
+  - name: STR_PYROKINESIS_2
+    cost: 350
+    points: 100
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_FIRE_MAGIC
+      
+  - name: STR_RUNES_THEORY 
+    cost: 1400
+    points: 200
+    needItem: false
+    requiresBaseFunc: [PSILAB,SCRIPTOR]
+    dependencies:
+      - STR_RUNES_2
+      - STR_X_CONTRACT
+      - STR_RIFT_STABILIZATON
+      
+  - name: STR_MAGIC_PROFS #psion specialization
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_RUNES_2
+      - STR_INITIATION
+      - STR_MANA_CRYSTAL
+      
+  - name: STR_MAGIC_MATERIALS_PRE #bone
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_RUNED_BONE_KNIFE
+      - STR_RUNED_BONE_AXE
+      - STR_RUNED_SPEAR
+      
+  - name: STR_MAGIC_MATERIALS #Plastic?
+    cost: 350
+    points: 100
+    requiresBaseFunc: [SHIELDLAB,SCRIPTOR]
+    dependencies:
+      - STR_ALIEN_ALLOYS
+      - STR_MAGIC_MATERIALS_PRE
+      
+  - name: STR_MAGIC_HEALING_PRE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_HEALING_AMULET
+      - STR_HEALING_CRYSTAL
+
+  - name: STR_MAGIC_HEALING
+    cost: 350
+    points: 100
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_X_MEDICINE
+      - STR_MAGIC_HEALING_PRE
+      - STR_MAGIC_THEORY
+
+  - name: STR_MAGIC_THEORY #This is science, b&!ch! Master tier
+    cost: 1500
+    points: 200
+    needItem: false
+    requiresBaseFunc: [PSILAB,HQFUNC]
+    dependencies:
+      - STR_QUEEN_EMISSION
+      - STR_MAGIC_PROFS
+      - STR_COMMON_SPELLS
+      
+  - name: STR_RUNES_3 #Rune chains
+    cost: 600
+    points: 100
+    needItem: false
+    requiresBaseFunc: [SCRIPTOR]
+    dependencies:
+      - STR_MAGIC_THEORY
+      - STR_RUNEWORDS
+      - STR_RUNE_RULES
+      - STR_RUNES_THEORY
+
+  - name: STR_SIGILS_PRE #alien interrogations
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GNUS_TERRORIST
+      - STR_GLOW_TERRORIST
+      - STR_FLIPPER_TERRORIST
+      - STR_PENEK_TERRORIST
+      - STR_OSTRICA_TERRORIST
+      - STR_TENTACLER_TERRORIST
+      - STR_CRYSTALLINE_TERRORIST
+      - STR_ELECTROSPIRIT_TERRORIST
+      - STR_JELLY_TERRORIST
+      - STR_TENTACULAT_TERRORIST
+
+  - name: STR_SIGILS #1 level spell sigils
+    requiresBaseFunc: [SCRIPTOR, POLYGON]
+    cost: 600
+    points: 100
+    dependencies:
+      - STR_RUNES_3
+      - STR_SIGILS_PRE
+
+  - name: STR_SIGILS_2 #2 level spell sigils
+    requiresBaseFunc: [SCRIPTOR, POLYGON]
+    cost: 600
+    points: 100
+    dependencies:
+      - STR_SIGILS
+      - STR_BATTLEMAGE_MASTER_TRANSFORMATION
+
+  - name: STR_SIGILS_3 #3 level spell sigils
+    requiresBaseFunc: [SCRIPTOR, POLYGON]
+    cost: 600
+    points: 100
+    dependencies:
+      - STR_SIGILS_2
+      - STR_BATTLEMAGE_MAGISTER_TRANSFORMATION
+
+  - name: STR_AIR_MAGIC
+    cost: 400
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_TROLLIUM
+  - name: STR_WATER_MAGIC
+    cost: 400
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_TROLLIUM
+  - name: STR_EARTH_MAGIC
+    cost: 400
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_TROLLIUM
+  - name: STR_FIRE_MAGIC
+    cost: 400
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_TROLLIUM
+  - name: STR_ARCANE_MAGIC
+    cost: 400
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_TROLLIUM
+    unlocks:
+      - STR_AURA_SHIELD
+  - name: STR_WARP_MAGIC
+    cost: 600
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_TROLLIUM
+      
+  - name: STR_DARK_MAGIC_PRE
+    cost: 0
+    points: 0
+    needItem: false
+    dependencies:
+      - STR_TROLLIUM
+  - name: STR_DARK_MAGIC
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_DARK_MAGIC_PRE
+  - name: STR_LIGHT_MAGIC
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_TROLLIUM
+      
+  - name: STR_SPIRITUALISM
+    cost: 400
+    points: 80
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_SPIRITS_CONTACT
+      - STR_MAGIC_PROFS
+      - STR_DARK_MAGIC
+      - STR_LIGHT_MAGIC
+
+  - name: STR_NECROMANCY_PRE
+    cost: 0
+    points: 0
+    needItem: false
+    dependencies:
+      - STR_TROLLIUM
+  - name: STR_NECROMANCY
+    cost: 600
+    points: 100
+    disables: 
+      - STR_BLESSINGS
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_NECROMANCY_PRE
+      - STR_SPIRITUALISM
+
+  - name: STR_HIGH_NECROMANCY_PRE
+    cost: 0
+    points: 0
+    needItem: false
+    dependencies:
+      - STR_TROLLIUM
+  - name: STR_HIGH_NECROMANCY
+    cost: 800
+    points: 130
+    needItem: false
+    requiresBaseFunc: [NECROLAB]
+    dependencies:
+      - STR_NECROMANCY
+      - STR_HIGH_NECROMANCY_PRE
+  - name: STR_BLESSINGS_PRE
+    cost: 0
+    points: 0
+    needItem: false
+    dependencies:
+      - STR_TROLLIUM
+  - name: STR_BLESSINGS
+    cost: 500
+    points: 100
+    disables: 
+      - STR_NECROMANCY
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_BLESSINGS_PRE
+      - STR_SPIRITUALISM
+
+  - name: STR_ASCENSION #magister tier
+    cost: 800
+    points: 500
+    needItem: false
+    requiresBaseFunc: [PSIINS]
+    dependencies:
+      - STR_ARCHMAGE
+      - STR_MAGIC_THEORY
+      
+  - name: STR_MASTER_BLESSING #footprints in the brain
+    cost: 300
+    points: 100
+    needItem: true
+    destroyItem: false
+    requiresBaseFunc: [HQFUNC]
+    dependencies:
+      - STR_MASTER_2
+  - name: STR_CROSSING_THE_EDGE #chosen tier 
+    cost: 1000
+    points: 1000
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_MASTER_BLESSING
+      - STR_ASCENSION
+#-------------------------------------------Magic Shields
+
+  - name: STR_AIR_SHIELD
+    cost: 300
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_AMULET_WINDWALL
+      - STR_AIR_MAGIC
+
+  - name: STR_WATER_SHIELD
+    cost: 300
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_AMULET_WATERWALL
+      - STR_WATER_MAGIC
+
+  - name: STR_FIRE_SHIELD
+    cost: 300
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_FIRE_MAGES
+      - STR_FIRE_MAGIC
+
+  - name: STR_STONE_SHIELD
+    cost: 300
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_EARTH_MAGIC
+      - STR_AMULET_STONEWALL
+
+  - name: STR_ARCANE_SHIELD
+    cost: 0
+    points: 0
+    needItem: false
+    dependencies:
+      - STR_AURA_SHIELD
+
+  - name: STR_LIGHT_SHIELD
+    cost: 300
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_LIGHT_MAGIC
+
+  - name: STR_DARK_SHIELD
+    cost: 300
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_DARK_MAGIC
+
+  - name: STR_METAL_SHIELD
+    cost: 300
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_WARP_MAGIC
+
+  - name: STR_AURA_SHIELD
+    cost: 300
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_BATTLEMAGE_TRANSFORMATION
+      - STR_MENTAT_TRANSFORMATION
+      - STR_CONJURER_TRANSFORMATION
+      - STR_HEALER_TRANSFORMATION
+      - STR_ARCANE_MAGIC
+#-------------------------------------------Transformations---------------------- 
+  - name: STR_BATTLEMAGE_TRANSFORMATION
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_MAGIC_PROFS
+      - STR_PYROKINESIS_2
+    unlocks:
+      - STR_AURA_SHIELD
+
+  - name: STR_RUNEGRAPHER_TRANSFORMATION
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_MAGIC_PROFS
+      - STR_RUNE_WORKBENCH
+      
+  - name: STR_MENTAT_TRANSFORMATION
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_MAGIC_PROFS
+      - STR_MIND_PROBE
+    unlocks:
+      - STR_AURA_SHIELD
+  - name: STR_CONJURER_TRANSFORMATION
+    cost: 350
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB,SUMMONING]
+    dependencies:
+      - STR_SPIRITUALISM
+    unlocks:
+      - STR_AURA_SHIELD
+      
+  - name: STR_NECROMANCER_TRANSFORMATION
+    cost: 300
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_NECROMANCY
+      - STR_CONJURER_TRANSFORMATION
+
+  - name: STR_RISE_DEAD
+    cost: 250
+    points: 100
+    needItem: false
+    requiresBaseFunc: [NECROLAB]
+    dependencies:
+      - STR_NECROMANCER_TRANSFORMATION
+      - STR_ZOMBIE_TERRORIST
+      - STR_GHOUL_TERRORIST
+
+  - name: STR_UNDEAD_TRANSFORM
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [NECROLAB]
+    dependencies: #More undead research here
+      - STR_RISE_DEAD
+      - STR_CONJURER_MALEFIC_TRANSFORMATION
+
+  - name: STR_HIGH_UNDEAD_TRANSFORM
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [NECROLAB]
+    dependencies: #More undead research here
+      - STR_UNDEAD_TRANSFORM
+      - STR_HIGH_NECROMANCY
+
+  - name: STR_HEALER_TRANSFORMATION
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_MAGIC_PROFS
+      - STR_X_MEDICINE
+      - STR_HEALING_AMULET
+    unlocks:
+      - STR_AURA_SHIELD
+
+#-------------------------------------------2 tier
+
+  - name: STR_SENSORIC
+    cost: 700
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_MAGIC_THEORY
+      - STR_MENTAT_TRANSFORMATION
+
+  - name: STR_BATTLEMAGE_MASTER_TRANSFORMATION
+    cost: 500
+    points: 150
+    needItem: false
+    requiresBaseFunc: [PSILAB,POLYGON]
+    dependencies:
+      - STR_BATTLEMAGE_TRANSFORMATION
+      - STR_MAGIC_THEORY
+
+  - name: STR_MENTAT_MASTER_TRANSFORMATION
+    cost: 500
+    points: 150
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_SENSORIC
+      - STR_PSYKERS
+#!      - STR_MIND_WEAPONS
+
+  - name: STR_HEALER_MASTER_TRANSFORMATION
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [PSILAB]
+    dependencies:
+      - STR_HEALER_TRANSFORMATION
+      - STR_MAGIC_HEALING
+
+  - name: STR_CONJURER_MALEFIC_TRANSFORMATION
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [NECROLAB]
+    dependencies:
+      - STR_CONJURER_TRANSFORMATION
+  - name: STR_CONJURER_PRIEST_TRANSFORMATION
+    cost: 500
+    points: 100
+    needItem: false
+    requiresBaseFunc: [SHRINE]
+    dependencies:
+      - STR_CONJURER_TRANSFORMATION
+#-------------------------------------------3 tier
+  - name: STR_BATTLEMAGE_MAGISTER_TRANSFORMATION
+    cost: 700
+    points: 200
+    needItem: false
+    requiresBaseFunc: [PSIINS]
+    dependencies:
+      - STR_BATTLEMAGE_MASTER_TRANSFORMATION
+      - STR_ASCENSION
+      
+  - name: STR_MENTAT_MAGISTER_TRANSFORMATION
+    cost: 700
+    points: 200
+    needItem: false
+    requiresBaseFunc: [PSIINS]
+    dependencies:
+      - STR_MENTAT_MASTER_TRANSFORMATION
+      - STR_ASCENSION
+  - name: STR_HEALER_MAGISTER_TRANSFORMATION
+    cost: 700
+    points: 200
+    needItem: false
+    requiresBaseFunc: [PSIINS]
+    dependencies:
+      - STR_HEALER_MASTER_TRANSFORMATION
+      - STR_ASCENSION
+  - name: STR_CONJURER_MAGISTER_TRANSFORMATION
+    cost: 600
+    points: 200
+    needItem: false
+    requiresBaseFunc: [PSIINS,NECROLAB]
+    dependencies:
+      - STR_CONJURER_MALEFIC_TRANSFORMATION
+      - STR_ASCENSION
+  - name: STR_CONJURER_VICAR_TRANSFORMATION
+    cost: 600
+    points: 200
+    needItem: false
+    requiresBaseFunc: [PSIINS,SHRINE]
+    dependencies:
+      - STR_CONJURER_PRIEST_TRANSFORMATION
+      - STR_ASCENSION
+### 4 tier
+  - name: STR_CHOSEN_TRANSFORMATION
+    cost: 500
+    points: 300
+    needItem: false
+    requiresBaseFunc: [PSIINS]
+    dependencies:
+      - STR_BATTLEMAGE_MAGISTER_TRANSFORMATION
+      - STR_MENTAT_MAGISTER_TRANSFORMATION
+      - STR_CROSSING_THE_EDGE
+
+#-------------------------------------------Facilities----------------------     
+  - name: STR_ADVANCED_RADARS
+    cost: 400
+    points: 100
+    dependencies: 
+      - STR_SKY_UNDER_CONTROL
+      - STR_X_CONTRACT 
+
+  - name: STR_MISSILE_DEFENSES
+    cost: 250
+    points: 50
+    dependencies: 
+      - STR_SKY_UNDER_CONTROL    
+  - name: STR_SHIELDED_PRISON
+    cost: 200
+    points: 100
+    dependencies:
+      - STR_KAA_CORPSE
+      - STR_FLOATER_CORPSE
+      - STR_DIRE_RAT_CORPSE
+      - STR_FIREFLY_CORPSE
+      - STR_GIANT_CORPSE
+      - STR_GIANT_SCORPION_CORPSE
+      - STR_MEGAWORM_CORPSE
+      - STR_SLIME_CORPSE
+      - STR_SNIPER_BEETLE_CORPSE
+      - STR_BOMBER_BEETLE_CORPSE
+      - STR_SPIKEBOAR_CORPSE
+      - STR_WEREWOLF_CORPSE
+      - STR_GLASS_SPIDER_CORPSE
+      - STR_PRISM_SPIDER_CORPSE
+  - name: STR_SHIELDED_LAB
+    cost: 500
+    points: 100
+    dependencies:
+      - STR_SHIELDED_PRISON
+      - STR_PSIONIC_1 
+      - STR_ARTIFACT_WEAK
+
+  - name: STR_ALIEN_CONTAINMENT
+    cost: 450
+    points: 100
+    dependencies:
+      - STR_QUEEN_EMISSION_IMITATION
+  - name: STR_MIND_SHIELD
+    cost: 360
+    points: 25
+    dependencies:
+      - STR_SENSORIC
+
+  - name: STR_MIND_SHIELD_2
+    cost: 360
+    points: 25
+    dependencies:
+      - STR_MIND_SHIELD
+      - STR_UFO_NAVIGATION
+      
+  - name: STR_TOWER_BARRIER
+    cost: 320
+    points: 25
+    dependencies:
+      - STR_CRAFT_SHIELD_1
+      - STR_UFO_NAVIGATION
+      
+  - name: STR_SCRIPTORIUM
+    cost: 200
+    points: 50
+    dependencies:
+      - STR_RUNES_2
+      - STR_RUNEGRAPHER_TRANSFORMATION
+  - name: STR_POLYGON
+    cost: 200
+    points: 50
+    dependencies:
+      - STR_BATTLEMAGE_TRANSFORMATION
+  - name: STR_SUMMONING_CIRCLE
+    requiresBaseFunc: [PSILAB]
+    cost: 200
+    points: 50
+    dependencies:
+      - STR_SPIRITUALISM
+      - STR_POLYGON
+      - STR_PSEUDOMATTER
+  - name: STR_PSIONIC_INSTITUTE
+    requiresBaseFunc: [PSILAB,HQFUNC]
+    cost: 350
+    points: 100
+    dependencies:
+      - STR_MASTER_1
+      - STR_SCRIPTORIUM
+      - STR_POLYGON
+      - STR_SUMMONING_CIRCLE
+#----------------------------------------Artifacts-----------------------------   
+  - name: STR_JEWELRY
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: false
+
+  - name: STR_CHITIN_PLATE
+    cost: 100
+    points: 20
+    needItem: true 
+    destroyItem: true
+
+  - name: STR_ARTIFACT_WEAK
+    cost: 600
+    points: 50
+    needItem: true 
+    destroyItem: true
+  - name: STR_ARTIFACT_STRONG
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 600
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_ARTIFACT_WEAK
+
+  - name: STR_MANA_CRYSTAL
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 800
+    points: 50
+    needItem: true 
+    destroyItem: true
+    unlocks:
+      - STR_PSEUDOMATTER_PRE
+  - name: STR_BOAT_GLYPH
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 600
+    points: 50
+    dependencies:
+      - STR_RUNES_2
+    needItem: true 
+    destroyItem: true
+    unlocks:
+      - STR_AIR_MAGIC
+
+  - name: STR_UFO_POWER_SOURCE
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 450
+    points: 50
+    dependencies:
+      - STR_MANA_CRYSTAL
+      - STR_PSIONIC_2
+    needItem: true
+    destroyItem: true
+
+  - name: STR_ALIEN_ALLOYS
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 450
+    points: 50
+    needItem: true
+
+  - name: STR_GUN_AMULET
+    requiresBaseFunc: [POLYGON]
+    cost: 450
+    points: 50
+    needItem: true
+    dependencies:
+      - STR_MANA_CRYSTAL
+      - STR_RUNES_2
+
+  - name: STR_UFO_CONSTRUCTION
+    cost: 350
+    points: 35
+    dependencies:
+      - STR_RUNES_THEORY
+      - STR_UFO_POWER_SOURCE
+      - STR_MAGIC_MATERIALS
+      - STR_ALIEN_ALLOYS
+      - STR_BOAT_GLYPH
+
+  - name: STR_RUNE_WORKBENCH
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 50
+    dependencies:
+      - STR_RUNES_2
+    needItem: true 
+    destroyItem: true
+
+  - name: STR_ALIEN_HABITAT
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 450
+    points: 50
+    needItem: true
+
+  - name: STR_UFO_NAVIGATION
+    requiresBaseFunc: [SUMMONING]
+    cost: 450
+    points: 50
+    dependencies:
+      - STR_SPIRITUALISM
+    needItem: true
+    destroyItem: false
+
+  - name: STR_QUEEN_OBSERVATION
+    requiresBaseFunc: [HQFUNC]
+    cost: 650
+    points: 150
+    dependencies:
+      - STR_PSIONIC_2
+    needItem: true
+    destroyItem: true
+    #sequentialGetOneFree: true
+    getOneFree:
+      - STR_QUEEN_REPORT_1
+      - STR_QUEEN_REPORT_2
+      - STR_QUEEN_REPORT_3
+      - STR_QUEEN_REPORT_4
+      - STR_QUEEN_REPORT_5
+      - STR_QUEEN_REPORT_6
+
+  - name: STR_INACTIVE_OBELISK
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 450
+    points: 100
+    dependencies:
+      - STR_RUNES_2
+    needItem: true 
+    destroyItem: true
+
+  - name: STR_MIND_PROBE
+    requiresBaseFunc: [PSILAB]
+    cost: 450
+    points: 50
+    needItem: true
+    dependencies:
+      - STR_PSIONIC_2
+      - STR_MIND_TRICKS
+
+  - name: STR_BLESS_MIRROR
+    requiresBaseFunc: [SHRINE]
+    cost: 480
+    points: 50
+    needItem: true
+    dependencies:
+      - STR_BLESSINGS
+      - STR_METAL_SHIELD
+
+  - name: STR_BLESS_FIRE
+    requiresBaseFunc: [SHRINE]
+    cost: 480
+    points: 50
+    needItem: true
+    dependencies:
+      - STR_BLESSINGS
+      - STR_FIRE_SHIELD
+      
+  - name: STR_BLESS_MENTAL
+    requiresBaseFunc: [SHRINE]
+    cost: 480
+    points: 50
+    needItem: true
+    dependencies:
+      - STR_BLESSINGS
+      - STR_MENTAT_TRANSFORMATION
+
+  - name: STR_BLESS_STONE
+    requiresBaseFunc: [SHRINE]
+    cost: 480
+    points: 50
+    needItem: true
+    dependencies:
+      - STR_BLESSINGS
+      - STR_STONE_SHIELD
+
+  - name: STR_BLESS_FIRE_2
+    requiresBaseFunc: [SHRINE]
+    cost: 680
+    points: 50
+    needItem: true
+    dependencies:
+      - STR_BLESS_FIRE
+      - STR_CONJURER_MAGISTER_TRANSFORMATION
+      
+  - name: STR_BLESS_STONE_2
+    requiresBaseFunc: [SHRINE]
+    cost: 680
+    points: 50
+    needItem: true
+    dependencies:
+      - STR_BLESS_STONE
+      - STR_CONJURER_MAGISTER_TRANSFORMATION
+
+  - name: STR_HEALING_CRYSTAL
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 50
+    needItem: true 
+    destroyItem: true
+
+  - name: STR_SCALES
+    requiresBaseFunc: [PSILAB]
+    cost: 400
+    points: 30
+    needItem: true 
+    destroyItem: true
+
+  - name: STR_POISONCATCHER
+    requiresBaseFunc: [PSILAB]
+    cost: 400
+    points: 30
+    needItem: true 
+    destroyItem: true
+#--------------------------------------Parts and pieces------------------------------------------------
+  - name: STR_DAMAGED_ARMOR
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 250
+    points: 50
+    needItem: true 
+    destroyItem: true
+    
+  - name: STR_ALIEN_CLAW
+    cost: 150
+    points: 30
+    needItem: true 
+    destroyItem: true
+#--------------------------------------Amulets------------------------------------------------
+
+  - name: STR_DAMAGED_AMULET
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 700
+    points: 50
+    needItem: true 
+    destroyItem: true
+
+  - name: STR_AMULET_WINDWALL
+    requiresBaseFunc: [PSILAB]
+    cost: 800
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_DAMAGED_AMULET
+  - name: STR_AMULET_WATERWALL
+    requiresBaseFunc: [PSILAB]
+    cost: 800
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_DAMAGED_AMULET
+
+  - name: STR_AMULET_STONEWALL
+    requiresBaseFunc: [PSILAB]
+    cost: 800
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_DAMAGED_AMULET
+
+  - name: STR_AMULET_FRESHNESS
+    requiresBaseFunc: [PSILAB]
+    cost: 600
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_DAMAGED_AMULET
+  - name: STR_AMULET_HEARTFIRE
+    requiresBaseFunc: [PSILAB]
+    cost: 600
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_DAMAGED_AMULET
+  - name: STR_TALISMAN_CLEARANCE
+    requiresBaseFunc: [PSILAB]
+    cost: 600
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_DAMAGED_AMULET
+  - name: STR_AMULET_FIRE_CORE
+    requiresBaseFunc: [PSILAB]
+    cost: 700
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_DAMAGED_AMULET
+  - name: STR_AMULET_STONE_CORE
+    requiresBaseFunc: [PSILAB]
+    cost: 600
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_DAMAGED_AMULET
+  - name: STR_AMULET_RUNE_AIR
+    requiresBaseFunc: [PSILAB]
+    cost: 450
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_RUNES_1
+  - name: STR_AMULET_RUNE_WATER
+    requiresBaseFunc: [PSILAB]
+    cost: 450
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_RUNES_1
+  - name: STR_AMULET_RUNE_STONE
+    requiresBaseFunc: [PSILAB]
+    cost: 450
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_RUNES_1
+  - name: STR_AMULET_RUNE_FIRE
+    requiresBaseFunc: [PSILAB]
+    cost: 450
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_RUNES_1
+  - name: STR_AMULET_RUNE_ARCANE
+    requiresBaseFunc: [PSILAB]
+    cost: 450
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_RUNES_1
+  - name: STR_AMULET_RUNE_LIGHT
+    requiresBaseFunc: [PSILAB]
+    cost: 450
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_RUNES_1
+  - name: STR_AMULET_RUNE_DARK
+    requiresBaseFunc: [PSILAB]
+    cost: 450
+    points: 50
+    needItem: true 
+    destroyItem: true
+    dependencies:
+      - STR_RUNES_1
+  - name: STR_HEALING_AMULET
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 50
+    dependencies:
+      - STR_RUNES_2
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_MAGIC_HEALING_PRE
+#-------------------------------------------Potions
+  - name: STR_INOIN
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 50
+    dependencies:
+      - STR_X_MEDICINE
+    needItem: true 
+    destroyItem: true 
+#    unlocks:
+#      - STR_MAGIC_HEALING_PRE
+  - name: STR_GREEN_POTION
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 50
+    dependencies:
+      - STR_ANTITOXIN
+    needItem: true 
+    destroyItem: true 
+#    unlocks:
+#      - STR_MAGIC_HEALING_PRE
+#--------------------------------------Invader melee weapons----------------------------------
+  - name: STR_BONE_KNIFE
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_RUNED_BONE_KNIFE
+    cost: 100
+    points: 10
+    needItem: true 
+    destroyItem: true 
+    dependencies:
+      - STR_PRIMITIVE_MAGIC
+      - STR_BONE_KNIFE
+    unlocks: 
+      - STR_MAGIC_MATERIALS_PRE
+  - name: STR_RUSTY_BLADE
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_KNIFE
+    cost: 10
+    points: 50
+    needItem: true 
+    destroyItem: true 
+  - name: STR_TALON_BLADE_1
+    cost: 50
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_TALON_BLADE_2
+    cost: 50
+    points: 10
+    needItem: true 
+    destroyItem: true
+  - name: STR_TALON_BLADE_3
+    cost: 50
+    points: 10
+    needItem: true 
+    destroyItem: true  
+  - name: STR_ROGUE_BLADE_1
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true  
+  - name: STR_ROGUE_BLADE_2
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true  
+  - name: STR_PIRATE_BLADE_1
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_SHORT_SWORD_1
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_SHORT_SWORD_POISON
+    cost: 100
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_SHORT_SWORD_FROST
+    cost: 100
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_SHORT_SWORD_2
+    cost: 20
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_ARCANE_SHORT_SWORD_1
+    cost: 100
+    points: 10
+    needItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+    destroyItem: true 
+  - name: STR_ARCANE_BLADE_1
+    cost: 100
+    points: 10
+    needItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+    destroyItem: true 
+  - name: STR_ARCANE_BLADE_2
+    cost: 100
+    points: 10
+    needItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+    destroyItem: true 
+  - name: STR_FIRE_BLADE_1
+    cost: 50
+    points: 10
+    needItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+    destroyItem: true  
+  - name: STR_FROST_BLADE_1
+    cost: 50
+    points: 10
+    needItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+    destroyItem: true  
+  - name: STR_FROST_BLADE_2
+    cost: 60
+    points: 10
+    needItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+    destroyItem: true  
+  - name: STR_SHOCK_BLADE_1
+    cost: 50
+    points: 10
+    needItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+    destroyItem: true  
+  - name: STR_DARK_BLADE_1
+    cost: 90
+    points: 10
+    needItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+    destroyItem: true  
+  - name: STR_BONE_AXE
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AXE_1
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AXE_2
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AXE_3
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true  
+  - name: STR_RUNED_BONE_AXE
+    cost: 100
+    points: 10
+    needItem: true 
+    dependencies:
+      - STR_PRIMITIVE_MAGIC
+      - STR_BONE_AXE
+    destroyItem: true 
+    unlocks: 
+      - STR_MAGIC_MATERIALS_PRE
+  - name: STR_BARDICHE
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true  
+  - name: STR_BARDICHE_2
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true  
+  - name: STR_AXE_SHOCK
+    cost: 100
+    points: 10
+    needItem: true
+    destroyItem: true
+    requiresBaseFunc: [SHIELDLAB]
+  - name: STR_AXE_FIRE
+    cost: 100
+    points: 10
+    needItem: true
+    destroyItem: true
+    requiresBaseFunc: [SHIELDLAB]
+  - name: STR_SPIKED_MACE
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_CRUEL_MACE
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_MAUL
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_MAUL_SHOCK
+    cost: 100
+    points: 10
+    needItem: true 
+    destroyItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+  - name: STR_MAUL_FIRE
+    cost: 100
+    points: 10
+    needItem: true 
+    destroyItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+  - name: STR_MAUL_FLASH
+    cost: 100
+    points: 10
+    needItem: true 
+    destroyItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+  - name: STR_SWORD_1
+    cost: 10
+    points: 50
+    needItem: true 
+    destroyItem: true 
+  - name: STR_SWORD_2
+    cost: 50
+    points: 50
+    needItem: true 
+    destroyItem: true 
+  - name: STR_BARBARIAN_SWORD
+    cost: 10
+    points: 50
+    needItem: true 
+    destroyItem: true 
+  - name: STR_SWORD_SHOCK
+    cost: 100
+    points: 50
+    needItem: true 
+    destroyItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+  - name: STR_SWORD_FIRE
+    cost: 100
+    points: 50
+    needItem: true 
+    destroyItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+  - name: STR_SWORD_FLASH
+    cost: 100
+    points: 50
+    needItem: true 
+    destroyItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+  - name: STR_SPEAR_1
+    cost: 10
+    points: 50
+    needItem: true 
+    destroyItem: true 
+  - name: STR_RUNED_SPEAR
+    cost: 100
+    points: 10
+    needItem: true 
+    dependencies:
+      - STR_PRIMITIVE_MAGIC
+      - STR_SPEAR_1
+    destroyItem: true 
+    unlocks: 
+      - STR_MAGIC_MATERIALS_PRE
+  - name: STR_FLAME_WHIP
+    cost: 100
+    points: 50
+    needItem: true 
+    destroyItem: true 
+    requiresBaseFunc: [SHIELDLAB]
+#------------------------------------X-COM magic weapons
+
+  - name: STR_CERAMIC_KNIFE
+    cost: 150
+    points: 10
+    dependencies:
+      - STR_RUNED_BONE_KNIFE
+      - STR_MAGIC_MATERIALS_PRE
+      - STR_PSIONIC_2
+
+  - name: STR_MAGIC_MELEE_CONSTRUCTION
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 350
+    points: 100
+    dependencies:
+      - STR_RUNES_2
+      - STR_MANA_CRYSTAL
+      - STR_MAGIC_MATERIALS_PRE
+
+  - name: STR_ALLOY_SPEAR_2
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 250
+    points: 100
+    dependencies:
+      - STR_MAGIC_MELEE_CONSTRUCTION
+      - STR_X_CONTRACT_MELEE
+      - STR_SPEAR_1
+      - STR_FIRE_PRISM_1
+#------------------------------------Invaders Ranged weapons-------------------
+  - name: STR_JAVELINS
+    cost: 200
+    points: 50
+    needItem: true 
+    destroyItem: true 
+  - name: STR_THROWING_AXES
+    cost: 20
+    points: 50
+    needItem: true 
+    destroyItem: true 
+  - name: STR_KUNAI
+    cost: 50
+    points: 50
+    needItem: true 
+    destroyItem: true 
+  - name: STR_BOW
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_LONGBOW
+    cost: 10
+    points: 10
+    needItem: true 
+    destroyItem: true 
+  - name: STR_ARROWS
+    cost: 150
+    points: 50
+    needItem: true 
+    destroyItem: true 
+    unlocks: 
+      - STR_BLOCK_BOW_PRE
+  - name: STR_ARROWS_FIRE
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 250
+    points: 50
+    needItem: true 
+    destroyItem: true 
+    unlocks: 
+      - STR_BLOCK_BOW_PRE
+  - name: STR_ARROWS_TOXIC
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 250
+    points: 50
+    needItem: true 
+    destroyItem: true 
+    unlocks: 
+      - STR_BLOCK_BOW_PRE
+      - STR_CHEMICAL_DANGER
+
+#---------------------------------------Hand Shields------------------
+  - name: STR_ROUND_SHIELD
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 60
+    needItem: true 
+    destroyItem: true 
+  - name: STR_KITE_SHIELD_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 60
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AMULET_SHIELD
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 60
+    needItem: true 
+    destroyItem: true 
+  - name: STR_TOWER_SHIELD_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 60
+    needItem: true 
+    destroyItem: true 
+  - name: STR_LEGION_SHIELD_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 60
+    needItem: true 
+    destroyItem: true 
+  - name: STR_BLESSED_ROUND_SHIELD
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 60
+    needItem: true 
+    destroyItem: true 
+#--------------------------------------------Wands----------------------
+  - name: STR_WAND_FIRE_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_FIRE_MAGIC
+  - name: STR_WAND_FIRE_2
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_FIRE_MAGIC
+  - name: STR_WAND_ICE_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_WATER_MAGIC
+  - name: STR_WAND_SHOCK_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_AIR_MAGIC
+  - name: STR_WAND_WIND_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_AIR_MAGIC
+  - name: STR_WAND_WIND_2
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_AIR_MAGIC
+  - name: STR_WAND_WIND_3
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_AIR_MAGIC
+  - name: STR_WAND_ACID_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_WATER_MAGIC
+  - name: STR_WAND_DARK_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+  - name: STR_ARCANE_STICK
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 400
+    points: 60
+    dependencies:
+      - STR_WANDS_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_ARCANE_MAGIC
+#--------------------------------------------Summon wands
+  - name: STR_WAND_LUMEN
+    requiresBaseFunc: [SUMMONING]
+    cost: 450
+    points: 65
+    dependencies:
+      - STR_WANDS_USE
+      - STR_LIGHT_MAGIC
+      - STR_SPIRIT_TRAP_LIGHT
+    needItem: false  
+  - name: STR_TOTEM_BAT
+    requiresBaseFunc: [SUMMONING]
+    cost: 450
+    points: 65
+    dependencies:
+      - STR_WANDS_USE
+      - STR_DARK_MAGIC
+      - STR_SPIRIT_TRAP_DARK
+      - STR_MIST_BAT_TERRORIST
+    needItem: false  
+#--------------------------------------------Scepters----------------------
+  - name: STR_SCEPTER_FIRE_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_SCEPTERS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_FIRE_MAGIC
+  - name: STR_SCEPTER_FIRE_3
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_SCEPTERS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_FIRE_MAGIC
+  - name: STR_SCEPTER_FIRE_4
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_SCEPTERS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_FIRE_MAGIC
+  - name: STR_SCEPTER_FROST_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_SCEPTERS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_WATER_MAGIC
+  - name: STR_SCEPTER_AIR_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_SCEPTERS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_AIR_MAGIC
+  - name: STR_SCEPTER_SHOCK_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_SCEPTERS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_AIR_MAGIC
+  - name: STR_SCEPTER_WARP_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_SCEPTERS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_WARP_MAGIC
+  - name: STR_SCEPTER_LIGHT_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_SCEPTERS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_LIGHT_MAGIC
+  - name: STR_SCEPTER_DARK_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_SCEPTERS_USE 
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+#-------------------------------------------Staves
+  - name: STR_STAFF_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 420
+    points: 60
+    dependencies:
+      - STR_STAVES_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_ARCANE_MAGIC
+  - name: STR_STAFF_2
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 420
+    points: 60
+    dependencies:
+      - STR_STAVES_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_ARCANE_MAGIC
+  - name: STR_STAFF_3
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 420
+    points: 60
+    dependencies:
+      - STR_STAVES_USE
+    needItem: true 
+    destroyItem: true
+    unlocks: 
+      - STR_CHEMICAL_DANGER
+      - STR_WATER_MAGIC
+  - name: STR_STAFF_4
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 410
+    points: 60
+    dependencies:
+      - STR_STAVES_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_EARTH_MAGIC
+  - name: STR_STAFF_5
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 420
+    points: 60
+    dependencies:
+      - STR_STAVES_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_FIRE_MAGIC
+  - name: STR_STAFF_6
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 420
+    points: 60
+    dependencies:
+      - STR_STAVES_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_AIR_MAGIC
+  - name: STR_STAFF_THUNDER
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 420
+    points: 60
+    dependencies:
+      - STR_STAVES_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_AIR_MAGIC
+    
+  - name: STR_STAFF_D
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 420
+    points: 60
+    dependencies:
+      - STR_STAVES_USE
+      - STR_DARK_MAGIC
+    needItem: true 
+    destroyItem: true
+  - name: STR_STAFF_ARCH
+    requiresBaseFunc: [SHIELDLAB,POLYGON]
+    cost: 420
+    points: 60
+    dependencies:
+      - STR_STAVES_USE
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_ARCANE_MAGIC
+#-------------------------------------------Other magic weapons
+  - name: STR_FIRE_PRISM_1
+    requiresBaseFunc: [SHIELDLAB]
+    cost: 300
+    points: 20
+    dependencies:
+      - STR_RUNES_2
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_FIRE_MAGIC
+  - name: STR_SPIRIT_TRAP_FIRE
+    requiresBaseFunc: [POLYGON]
+    cost: 300
+    points: 20
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_FIRE_MAGIC
+      - STR_PSEUDOMATTER_PRE
+  - name: STR_SPIRIT_TRAP_TOXIC
+    requiresBaseFunc: [POLYGON]
+    cost: 300
+    points: 20
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_WATER_MAGIC
+      - STR_PSEUDOMATTER_PRE
+  - name: STR_SPIRIT_TRAP_LIGHT
+    requiresBaseFunc: [POLYGON]
+    cost: 300
+    points: 20
+    needItem: true 
+    destroyItem: true 
+    unlocks: 
+      - STR_LIGHT_MAGIC
+      - STR_PSEUDOMATTER_PRE
+  - name: STR_SPIRIT_TRAP_DARK
+    requiresBaseFunc: [POLYGON]
+    cost: 300
+    points: 20
+    needItem: true 
+    destroyItem: true 
+    unlocks: 
+      - STR_DARK_MAGIC_PRE
+      - STR_PSEUDOMATTER_PRE
+#-------------------------------------------Spell knowledge
+  - name: STR_COMMON_RUNES
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_RUNEWORDS
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_RUNE_RULES
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_COMMON_SPELLS
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+#---------------------------------Spells 1 Level
+  - name: STR_AIR_STRIKE_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AIR_STRIKE_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_AIR_STRIKE_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_ARCANE_BOLT_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_ARCANE_BOLT_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_ARCANE_BOLT_1
+    unlocks: 
+      - STR_ARCANE_MAGIC
+  - name: STR_FIRE_BOLT_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_FIRE_BOLT_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_FIRE_BOLT_1
+    unlocks: 
+      - STR_FIRE_MAGIC
+  - name: STR_ICE_BOLT_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_ICE_BOLT_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_ICE_BOLT_1
+    unlocks: 
+      - STR_WATER_MAGIC
+  - name: STR_LIGHTNING_BOLT_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_LIGHTNING_BOLT_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_LIGHTNING_BOLT_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_LIGHT_SPEAR_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_LIGHT_SPEAR_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_LIGHT_MAGIC
+    lookup: STR_LIGHT_SPEAR_1
+  - name: STR_AIR_BLADE_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AIR_BLADE_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_AIR_BLADE_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_STONE_SPIKE_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_STONE_SPIKE_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_STONE_SPIKE_1
+    unlocks: 
+      - STR_EARTH_MAGIC
+  - name: STR_AIR_CLAW_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AIR_CLAW_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_AIR_CLAW_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_FIRE_CLAW_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_FIRE_CLAW_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_FIRE_CLAW_1
+    unlocks: 
+      - STR_FIRE_MAGIC
+  - name: STR_CRYSTAL_CLAW_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_CRYSTAL_CLAW_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_CRYSTAL_CLAW_1
+    unlocks: 
+      - STR_EARTH_MAGIC
+  - name: STR_ICE_CLAW_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_ICE_CLAW_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_ICE_CLAW_1
+    unlocks: 
+      - STR_WATER_MAGIC
+  - name: STR_ARCANE_CLAW_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_ARCANE_CLAW_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_ARCANE_CLAW_1
+    unlocks: 
+      - STR_ARCANE_MAGIC
+  - name: STR_LIGHT_CLAW_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_LIGHT_CLAW_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_LIGHT_MAGIC
+    lookup: STR_LIGHT_CLAW_1
+  - name: STR_DARK_CLAW_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_DARK_CLAW_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+    lookup: STR_DARK_CLAW_1
+#---------------------------------Spells 2 Level
+  - name: STR_MANA_BLAST_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_MANA_BLAST_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_MANA_BLAST_1
+    unlocks: 
+      - STR_ARCANE_MAGIC
+  - name: STR_AIR_BLOW_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AIR_BLOW_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_AIR_BLOW_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_WARP_BOLT_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_WARP_BOLT_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_WARP_BOLT_1
+    unlocks: 
+      - STR_WARP_MAGIC
+  - name: STR_AIR_TWISTER_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AIR_TWISTER_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_AIR_TWISTER_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_FIREBALL_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_FIREBALL_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_FIREBALL_1
+    unlocks: 
+      - STR_FIRE_MAGIC
+  - name: STR_ICE_COMET_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_ICE_COMET_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_ICE_COMET_1
+    unlocks: 
+      - STR_WATER_MAGIC
+  - name: STR_SUFFOCATION_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_SUFFOCATION_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_SUFFOCATION_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_BLIZZARD_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_BLIZZARD_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_BLIZZARD_1
+    unlocks: 
+      - STR_WATER_MAGIC
+  - name: STR_LIGHT_BLAST_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_LIGHT_BLAST_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_LIGHT_MAGIC
+    lookup: STR_LIGHT_BLAST_1
+    unlocks: 
+      - STR_LIGHT_MAGIC
+  - name: STR_DARK_TENTACLE_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_DARK_TENTACLE_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+    lookup: STR_DARK_TENTACLE_1
+  - name: STR_NOVA_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_NOVA_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_NOVA_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_DUST_HELM_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_DUST_HELM_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_DUST_HELM_1
+    unlocks: 
+      - STR_EARTH_MAGIC
+#---------------------------------Spells 3 level
+  - name: STR_FIRE_BEAM_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_FIRE_BEAM_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_FIRE_BEAM_1
+    unlocks: 
+      - STR_FIRE_MAGIC
+  - name: STR_LIGHTNING_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true
+  - name: STR_LIGHTNING_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_LIGHTNING_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_STONE_SKIN_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true
+  - name: STR_STONE_SKIN_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_STONE_SKIN_1
+    unlocks: 
+      - STR_EARTH_MAGIC
+  - name: STR_MANA_THUNDER_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_MANA_THUNDER_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_MANA_THUNDER_1
+    unlocks: 
+      - STR_ARCANE_MAGIC
+  - name: STR_TORNADO_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_TORNADO_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_TORNADO_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_WARP_BLAST_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_WARP_BLAST_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_WARP_BLAST_1
+    unlocks: 
+      - STR_WARP_MAGIC
+  - name: STR_FIRE_RAIN_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_FIRE_RAIN_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_FIRE_RAIN_1
+    unlocks: 
+      - STR_FIRE_MAGIC
+  - name: STR_AP_FIREBALL_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_AP_FIREBALL_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_AP_FIREBALL_1
+    unlocks: 
+      - STR_FIRE_MAGIC
+  - name: STR_TORNADO_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_TORNADO_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    lookup: STR_TORNADO_1
+    unlocks: 
+      - STR_AIR_MAGIC
+  - name: STR_DARK_TWISTER_1
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+  - name: STR_DARK_TWISTER_2
+    cost: 0
+    points: 0
+    needItem: true 
+    destroyItem: true 
+    unlocks:
+      - STR_DARK_MAGIC_PRE
+    lookup: STR_DARK_TWISTER_1
+#-------------------------------------------Books
+
+  - name: STR_MAGIC_BOOK
+    cost: 250
+    points: 20
+    dependencies:
+      - STR_INVADER_LANGUAGE_3
+    needItem: true
+    destroyItem: true
+    
+  - name: STR_SPELLBOOK_AIR
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_INVADER_LANGUAGE_3
+    requiresBaseFunc: [SCRIPTOR]
+    needItem: true
+    destroyItem: true
+    getOneFree:
+      - STR_COMMON_SPELLS
+      - STR_AIR_STRIKE_1
+      - STR_LIGHTNING_BOLT_1
+      - STR_AIR_BLADE_1
+      - STR_AIR_CLAW_1
+
+  - name: STR_SPELLBOOK_FIRE
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_INVADER_LANGUAGE_3
+    requiresBaseFunc: [SCRIPTOR]
+    needItem: true
+    destroyItem: true
+    getOneFree:
+      - STR_COMMON_SPELLS
+      - STR_FIRE_BOLT_1
+      - STR_FIRE_CLAW_1
+
+  - name: STR_SPELLBOOK_WATER
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_INVADER_LANGUAGE_3
+    requiresBaseFunc: [SCRIPTOR]
+    needItem: true
+    destroyItem: true
+    getOneFree:
+      - STR_COMMON_SPELLS
+      - STR_ICE_BOLT_1
+      - STR_ICE_CLAW_1
+      
+  - name: STR_SPELLBOOK_STONE
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_INVADER_LANGUAGE_3
+    requiresBaseFunc: [SCRIPTOR]
+    needItem: true
+    destroyItem: true
+    getOneFree:
+      - STR_COMMON_SPELLS
+      - STR_STONE_SPIKE_1
+      - STR_CRYSTAL_CLAW_1
+      
+  - name: STR_SPELLBOOK_ARCANE
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_INVADER_LANGUAGE_3
+    requiresBaseFunc: [SCRIPTOR]
+    needItem: true
+    destroyItem: true
+    getOneFree:
+      - STR_COMMON_SPELLS
+      - STR_ARCANE_BOLT_1
+      - STR_ARCANE_CLAW_1
+      
+  - name: STR_RUNEBOOK
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_INVADER_LANGUAGE_3
+      - STR_RUNES_1
+    needItem: true
+    destroyItem: true
+    getOneFreeProtected:
+      STR_RUNES_1:
+        - STR_RUNES_2_PRE
+      STR_RUNES_2:
+        - STR_COMMON_RUNES
+        - STR_RUNEWORDS
+
+  - name: STR_GRIMUAR_USE
+    cost: 250
+    points: 20
+    dependencies:
+      - STR_INVADER_LANGUAGE_3
+      - STR_RUNES_2
+      - STR_BATTLEMAGE_MASTER_TRANSFORMATION
+  - name: STR_GRIMUAR_GHOUL
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_GRIMUAR_USE
+    requiresBaseFunc: [NECROLAB]
+  - name: STR_GRIMUAR_SLUDGE
+    cost: 230
+    points: 25
+    dependencies:
+      - STR_GRIMUAR_USE
+    requiresBaseFunc: [NECROLAB]
+  - name: STR_GRIMUAR_STORM
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_GRIMUAR_USE
+    requiresBaseFunc: [SCRIPTOR]
+  - name: STR_GRIMUAR_TORNADO
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_GRIMUAR_USE
+    requiresBaseFunc: [SCRIPTOR]
+  - name: STR_GRIMUAR_FIRE_RAIN
+    cost: 150
+    points: 20
+    dependencies:
+      - STR_GRIMUAR_USE
+    requiresBaseFunc: [SCRIPTOR]
+
+  - name: STR_INVADERS_CRUISE
+    points: 20
+    needItem: true
+  - name: STR_INVADERS_RAID
+    points: 20
+    needItem: true
+  - name: STR_INVADERS_TERROR
+    points: 20
+    needItem: true
+  - name: STR_INVADERS_CAMP
+    points: 20
+    needItem: true
+  - name: STR_INVADERS_FORT
+    points: 20
+    needItem: true
+  - name: STR_INVADERS_RETALIATION
+    points: 20
+    needItem: true
+  - name: STR_ADVENT_RAID
+    points: 20
+    needItem: true
+  - name: STR_ALIEN_RAID
+    points: 20
+    needItem: true
+  - name: STR_ALIEN_BASE_2
+    points: 20
+    needItem: true
+  - name: STR_TEMPLES_MESS
+    points: 20
+    needItem: true
+#-------------------------------------------Flying ships
+
+  - name: STR_SMALL_BOAT
+    points: 50
+    needItem: true
+  - name: STR_SMALL_BARGE
+    points: 50
+    needItem: true
+  - name: STR_MEDIUM_BARGE
+    points: 50
+    needItem: true
+  - name: STR_SMALL_SHIP
+    points: 50
+    needItem: true
+  - name: STR_SMALL_SHIP_2
+    points: 50
+    needItem: true
+  - name: STR_MEDIUM_SHIP_1
+    points: 50
+    needItem: true
+  - name: STR_LARGE_SHIP_1
+    points: 50
+    needItem: true
+  - name: STR_LARGE_SHIP_2
+    points: 50
+    needItem: true
+  - name: STR_LARGE_SHIP_3
+    points: 50
+    needItem: true
+  - name: STR_HUGE_SHIP_1
+    points: 50
+    needItem: true
+  - name: STR_SMALL_SHIP_B
+    points: 50
+    needItem: true
+  - name: STR_SMALL_SHIP_2_B
+    points: 50
+    needItem: true
+  - name: STR_MEDIUM_SHIP_1_B
+    points: 50
+    needItem: true
+  - name: STR_LARGE_SHIP_1_B
+    points: 50
+    needItem: true
+  - name: STR_LARGE_SHIP_2_B
+    points: 50
+    needItem: true
+  - name: STR_LARGE_SHIP_3_B
+    points: 50
+    needItem: true

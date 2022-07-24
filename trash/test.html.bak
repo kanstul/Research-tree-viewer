@@ -1,0 +1,43 @@
+<!-- The `multiple` attribute lets users select multiple files. -->
+<input type="file" id="file-selector" multiple>
+<script src="/home/ask/code/cyto/node_modules/cytoscape/dist/cytoscape.min.js"></script>
+<style>
+    #cy {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+</style>
+
+<div id="cy"></div>
+<script>
+  const fileSelector = document.getElementById('file-selector');
+  fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    console.log(fileList);
+  });
+	/*
+var cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements: [
+          { data: { id: 'a' } },
+          { data: { id: 'b' } },
+          {
+            data: {
+              id: 'ab',
+              source: 'a',
+              target: 'b'
+            }
+          }],
+	style: [
+		{
+			selector: 'node',
+			style: {
+				label: 'data(id)'
+			}
+		}] ,
+      });
+       */
+</script>

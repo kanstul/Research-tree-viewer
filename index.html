@@ -1,0 +1,102 @@
+<!-- The `multiple` attribute lets users select multiple files. -->
+<script src="/home/ask/code/cyto/node_modules/cytoscape/dist/cytoscape.min.js"></script>
+<style>
+    #cy {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+</style>
+
+<div id="cy">
+<input type="file" id="file-selector" multiple>
+</div>
+<script>
+  const fileSelector = document.getElementById('file-selector');
+var cy = cytoscape({
+        container: document.getElementById('cy'),
+		/*
+        elements: [
+          { data: { id: 'a' } },
+          { data: { id: 'b' } },
+          {
+            data: {
+              id: 'ab',
+              source: 'a',
+              target: 'b'
+            }
+          }],
+       */
+	style: [
+		{
+			selector: 'node',
+			style: {
+				label: 'data(id)'
+			}
+		}] ,
+      });
+
+  fileSelector.addEventListener('change', (event) => {
+	const file = event.target.files[0];
+	console.log("HEY LISTEN.");
+	console.log(file);
+	console.log("HEY LISTEN.");
+	const reader = new FileReader();
+	var taken = new Set();
+	reader.onload = (test) => {
+			const file = test.target.result;
+			var lines = file.split('\n');
+			for (var i=0;i<lines.length;++i) {
+				if (lines[i].includes('name:')) {
+					if (!taken.has(lines[i].substr(10).trim())) // Hack. 
+					cy.add({
+						data: { id: lines[i].substr(10).trim() }
+					});
+					else {
+							console.log("THE RESEARCH "+lines[i].substr(10).trim()+" IS DUPLICATED.");
+					}
+					taken.add(lines[i].substr(10).trim());
+					console.log(lines[i].substr(10));
+				}
+			}
+			for (var i=0;typeof lines[i] == 'string' && i<lines.length;++i) {
+				if (lines[i].includes('name:')) // REALLY HACKY. 
+						thisone = lines[i].substr(10).trim(); // REALLY HACKY. 
+				if (lines[i].includes('dependencies:')) {
+					++i;
+					while (typeof lines[i] == 'string' && !lines[i].includes('name')){
+							if (lines[i].substr(8).trim() == '') {
+								++i;
+								continue;
+							}
+							console.log("While.");
+							console.log(lines[i].substr(8).trim());
+							console.log(thisone);
+							if (taken.has(lines[i].substr(8).trim())) // HACK. 
+							cy.add({
+									data: {
+											id: 'edge' + i,
+											source: lines[i].substr(8).trim(),
+											target: thisone
+										}
+								});
+							else { // Add if does not exist?! 
+								console.log("THE RESEARCH "+lines[i].substr(10).trim()+" DOES NOT EXIST."); // Add if does not exist?! 
+							} // Add if does not exist?! 
+								//HEY LOOK OVER HERE! 
+								// If so make sure STARTSWITH so it doesn't pull bad data! 
+					++i;
+					}
+					--i;
+				}
+			}
+			cy.layout({
+					    name: 'breadthfirst',
+					spacingFactor: 10
+			}).run();
+		};
+	reader.readAsText(file);
+});
+</script>

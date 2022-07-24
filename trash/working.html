@@ -1,0 +1,91 @@
+<!-- The `multiple` attribute lets users select multiple files. -->
+<script src="/home/ask/code/cyto/node_modules/cytoscape/dist/cytoscape.min.js"></script>
+<style>
+    #cy {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+</style>
+
+<div id="cy">
+<input type="file" id="file-selector" multiple>
+</div>
+<script>
+  const fileSelector = document.getElementById('file-selector');
+var cy = cytoscape({
+        container: document.getElementById('cy'),
+		/*
+        elements: [
+          { data: { id: 'a' } },
+          { data: { id: 'b' } },
+          {
+            data: {
+              id: 'ab',
+              source: 'a',
+              target: 'b'
+            }
+          }],
+       */
+	style: [
+		{
+			selector: 'node',
+			style: {
+				label: 'data(id)'
+			}
+		}] ,
+      });
+
+  fileSelector.addEventListener('change', (event) => {
+	const file = event.target.files[0];
+	console.log("HEY LISTEN.");
+	console.log(file);
+	console.log("HEY LISTEN.");
+	const reader = new FileReader();
+	reader.onload = (test) => {
+			const file = test.target.result;
+			var lines = file.split('\n');
+			//for (var i=0;i<10;++i) {
+			for (var i=0;i<lines.length;++i) {
+				if (lines[i].includes('name:')) {
+					cy.add({
+						data: { id: lines[i] }
+					});
+				}
+			}
+			/*
+			for (var i=0;i<lines.length;++i) {
+				if (lines[i].includes('requires:')) {
+					    cy.add({
+						data: {
+						    id: 'edge' + i,
+						    source: 
+						    target: (i % 2 == 0 ? 'a' : 'b')
+						}
+					    });
+				}
+			}
+       			*/
+			cy.layout({
+					    name: 'breadthfirst'
+			}).run();
+			/*
+			for (var i=0;i<lines.length;++i) {
+				//if (lines[i].includes('name:'))
+					//console.log(lines[i]);
+				if (lines[i].includes('name:'))
+						cy.add({
+								data: {
+										id: 'test'+i,
+										source: 'a',
+										target: 'b'
+									}
+							});
+			}
+       */
+		};
+	reader.readAsText(file);
+});
+</script>
